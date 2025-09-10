@@ -33,7 +33,7 @@ html {
 .section-kicker {
     font-size: 1rem;
     font-weight: 600;
-    color: #79c548;
+    color:#32694a;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -418,88 +418,93 @@ html {
 
 /* --- 8. SECCIÓN PRODUCTOS Y VARIEDADES (Efecto Holográfico Verde) --- */
 
-#productos, #variedades {
-    background-color: #f7f9fc;
+/* --- SECCIÓN VARIEDADES DE PASAS (Efecto Cursor Interactivo) --- */
+
+#variedades {
+    background-color: #ffffff; /* 1. FONDO BLANCO */
+    padding: 5rem 0;
 }
-#productos .feature-card,
-#variedades .feature-card {
+
+#variedades .section-title {
+    color: #1a1a1a; /* Título oscuro para contrastar con el fondo blanco */
+}
+
+.variety-card {
     position: relative;
     overflow: hidden;
-    background: #79c548;
+    height: 150px; /* 2. TARJETAS MÁS PEQUEÑAS (Reducimos la altura) */
     border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    background-color: #f1f2f3; /* Un gris muy claro para el fondo de la tarjeta */
+    cursor: pointer;
+    border: 2px solid transparent; /* Borde inicial transparente */
     transition: all 0.4s ease;
-    padding: 1.5rem;
 }
-#productos .feature-card img,
-#variedades .feature-card img {
-    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
-    width: calc(100% + 3rem);
-    height: 250px;
-    object-fit: cover;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-#productos .feature-card::before,
-#variedades .feature-card::before {
+
+/* El barrido de luz diagonal */
+.variety-card::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(0deg, transparent, transparent 40%, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3), transparent 60%, transparent);
-    transform: rotate(-45deg);
-    transition: all 0.5s ease;
-    opacity: 0;
-    z-index: 1;
+    width: 150%;
+    height: 150%;
+    background: linear-gradient(45deg, transparent, var(--border-color), transparent);
+    opacity: 0.15; /* Lo hacemos más sutil sobre fondo claro */
+    top: -125%;
+    left: -125%;
+    transition: all 0.6s ease;
 }
-#productos .feature-card:hover,
-#variedades .feature-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 0 30px rgba(121, 197, 72, 0.6);
-    border-color: rgba(255, 255, 255, 0.3);
+
+.variety-card:hover::before {
+    top: 100%;
+    left: 100%;
 }
-#productos .feature-card:hover::before,
-#variedades .feature-card:hover::before {
-    opacity: 1;
-    transform: rotate(-45deg) translateY(70%);
+
+/* La imagen */
+.variety-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: brightness(1); /* Imagen con brillo normal por defecto */
 }
-#productos .feature-card .feature-card-body,
-#variedades .feature-card .feature-card-body,
-#productos .feature-card .item-content,
-#variedades .feature-card .item-content {
-    position: relative;
-    z-index: 2;
-    padding: 0;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+
+.variety-card:hover img {
+    transform: scale(1.1);
 }
-#productos .feature-card-title, #variedades .feature-card-title,
-#productos .item-title, #variedades .item-title { color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); font-size: 1.6rem; }
-#productos .feature-card-price, #variedades .feature-card-price { color: #ffffff; font-weight: 400; }
-#productos .feature-card-text, #variedades .feature-card-text,
-#productos .mbr-text, #variedades .mbr-text { color: #f0f0f0; }
-#productos .btn-primary-custom, #variedades .btn-primary-custom {
-    background: transparent;
+
+/* El nombre de la variedad */
+.variety-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
     color: #ffffff;
-    border: 2px solid #ffffff;
-    border-radius: 50px;
-    padding: 8px 20px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    margin-top: auto; /* Empuja el botón hacia abajo */
+    font-size: 1.5rem; /* Tamaño de fuente ajustado */
+    font-weight: 700;
+    text-align: left;
+    transition: all 0.4s ease;
 }
-#productos .btn-primary-custom:hover,
-#variedades .btn-primary-custom:hover {
-    background: #ffffff;
-    color: #79c548;
-    transform: scale(1.05);
-    box-shadow: none;
+
+/* Efecto hover general de la tarjeta */
+.variety-card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.1); /* Sombra más sutil */
+    border-color: var(--border-color); /* El borde aparece al hacer hover */
+}
+
+/* 3. RESPONSIVIDAD PARA MÓVILES */
+@media (max-width: 767px) {
+    #variedades .row > [class*="col-"] {
+        /* Bootstrap a veces necesita ayuda para que el gap funcione bien en móvil */
+        margin-bottom: 1.5rem; /* Usamos margin en lugar de gap si es necesario */
+    }
+    .variety-card {
+        height: 200px; /* Tarjetas aún más compactas en móvil */
+    }
+    .variety-name {
+        font-size: 1.2rem; /* Texto más pequeño en móvil */
+    }
 }
 
 
