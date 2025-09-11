@@ -33,7 +33,7 @@ html {
 .section-kicker {
     font-size: 1rem;
     font-weight: 600;
-    color:#32694a;
+    color: #79c548;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -100,7 +100,7 @@ html {
     inset: 0;
     border-radius: 60px;
     /* TU GRADIENTE MORADO */
-    background: linear-gradient(45deg, #a955ff, #ea51ff);
+    background: linear-gradient(45deg, #982c53, #ea51ff);
     opacity: 0;
     transition: 0.5s;
 }
@@ -113,7 +113,7 @@ html {
     width: 100%;
     height: 100%;
     border-radius: 60px;
-    background: linear-gradient(45deg, #a955ff, #ea51ff);
+    background: linear-gradient(45deg, #982c53, #ea51ff);
     transition: 0.5s;
     filter: blur(15px);
     z-index: -1;
@@ -317,7 +317,7 @@ html {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transform: translateY(-5px);
 }
-#estadisticas .stat-number { font-size: 3.5rem; font-weight: 700; color: #79c548; }
+#estadisticas .stat-number { font-size: 3.5rem; font-weight: 700; color: #32694a; }
 #estadisticas .stat-title {
     font-size: 1.5rem;
     font-weight: 700;
@@ -332,7 +332,7 @@ html {
     position: absolute;
     width: 100%;
     height: 3px;
-    background: linear-gradient(to right, #b2df8a, #79c548);
+    background: linear-gradient(to right, #b2df8a, #32694a);
     bottom: -8px;
     left: 0;
     transform: scaleX(0);
@@ -416,107 +416,82 @@ html {
 }
 
 
-/* --- 8. SECCIÓN PRODUCTOS Y VARIEDADES (Efecto Holográfico Verde) --- */
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA SECCIONES DE TARJETAS
+   ========================================================================== */
 
-/* --- SECCIÓN VARIEDADES DE PASAS (Efecto Cursor Interactivo) --- */
+/* --- 8. SECCIÓN PRODUCTOS ("Nuestros Racimos de Exportación") --- */
+/* Esta sección tiene tarjetas más informativas con precio y descripción. */
 
-#variedades {
-    background-color: #ffffff; /* 1. FONDO BLANCO */
+#productos {
+    background-color: #f7f9fc;
     padding: 5rem 0;
 }
 
-#variedades .section-title {
-    color: #1a1a1a; /* Título oscuro para contrastar con el fondo blanco */
-}
-
-.variety-card {
-    position: relative;
-    overflow: hidden;
-    height: 150px; /* 2. TARJETAS MÁS PEQUEÑAS (Reducimos la altura) */
+#productos .feature-card {
+    background: #ffffff;
     border-radius: 12px;
-    background-color: #f1f2f3; /* Un gris muy claro para el fondo de la tarjeta */
-    cursor: pointer;
-    border: 2px solid transparent; /* Borde inicial transparente */
-    transition: all 0.4s ease;
-}
-
-/* El barrido de luz diagonal */
-.variety-card::before {
-    content: '';
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    background: linear-gradient(45deg, transparent, var(--border-color), transparent);
-    opacity: 0.15; /* Lo hacemos más sutil sobre fondo claro */
-    top: -125%;
-    left: -125%;
-    transition: all 0.6s ease;
-}
-
-.variety-card:hover::before {
-    top: 100%;
-    left: 100%;
-}
-
-/* La imagen */
-.variety-card img {
-    width: 100%;
+    border: 1px solid #eee;
+    overflow: hidden;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease, filter 0.4s ease;
-    filter: brightness(1); /* Imagen con brillo normal por defecto */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
 }
 
-.variety-card:hover img {
+#productos .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+#productos .feature-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+#productos .feature-card:hover img {
     transform: scale(1.1);
 }
 
-/* El nombre de la variedad */
-.variety-name {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-    color: #ffffff;
-    font-size: 1.5rem; /* Tamaño de fuente ajustado */
+#productos .feature-card-body {
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#productos .feature-card-title {
+    font-size: 1.4rem;
     font-weight: 700;
-    text-align: left;
-    transition: all 0.4s ease;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
 }
 
-/* Efecto hover general de la tarjeta */
-.variety-card:hover {
-    transform: scale(1.05) translateY(-10px);
-    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.1); /* Sombra más sutil */
-    border-color: var(--border-color); /* El borde aparece al hacer hover */
+#productos .feature-card-price {
+    color: #79c548;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-/* 3. RESPONSIVIDAD PARA MÓVILES */
-@media (max-width: 767px) {
-    #variedades .row > [class*="col-"] {
-        /* Bootstrap a veces necesita ayuda para que el gap funcione bien en móvil */
-        margin-bottom: 1.5rem; /* Usamos margin en lugar de gap si es necesario */
-    }
-    .variety-card {
-        height: 200px; /* Tarjetas aún más compactas en móvil */
-    }
-    .variety-name {
-        font-size: 1.2rem; /* Texto más pequeño en móvil */
-    }
+#productos .feature-card-text {
+    color: #7f8c8d;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
 }
 
 
 /* --- 9. SECCIÓN ATRIBUTOS DEL PRODUCTO (Efecto Neón Inclinado) --- */
-
+/* Esta es la sección con "Nutrición Solar", "Suelo Puro", etc. */
 
 .attributes-section {
     padding: 5rem 0;
-    background-color: #ffffff; /* 1. CAMBIO: Fondo de la sección a blanco */
+    background-color: #ffffff; /* Fondo blanco */
 }
 
-/* 2. CAMBIO: El texto de la cabecera ahora debe ser oscuro */
 .attributes-section .section-title,
 .attributes-section .section-subtitle {
     color: #1a1a1a;
@@ -532,23 +507,8 @@ html {
     transition: 0.5s;
 }
 
-/* El fondo de color inclinado (inicialmente invisible) */
-.attribute-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 40px;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(315deg, #b2df8a, #79c548);
-    border-radius: 8px;
-    transform: skewX(15deg);
-    transition: all 0.5s ease-in-out; /* Transición más suave */
-    opacity: 0; /* <-- LA CLAVE: Lo hacemos invisible por defecto */
-}
-
-/* El brillo desenfocado detrás (inicialmente invisible) */
-.attribute-box::after {
+/* Fondo de color inclinado (invisible por defecto) */
+.attribute-box::before, .attribute-box::after {
     content: '';
     position: absolute;
     top: 0;
@@ -559,24 +519,28 @@ html {
     border-radius: 8px;
     transform: skewX(15deg);
     transition: all 0.5s ease-in-out;
-    filter: blur(30px);
-    opacity: 0; /* <-- LA CLAVE: Lo hacemos invisible por defecto */
+    opacity: 0;
 }
 
-/* Animación al pasar el cursor (ahora también lo hacemos visible) */
+/* Brillo desenfocado */
+.attribute-box::after {
+    filter: blur(30px);
+}
+
+/* Animación al pasar el cursor */
 .attribute-box:hover::before,
 .attribute-box:hover::after {
     transform: skewX(0deg);
     left: 20px;
     width: calc(100% - 40px);
-    opacity: 1; /* <-- LA MAGIA: Hacemos visible el fondo al pasar el cursor */
+    opacity: 1;
 }
 
-/* Contenido de la tarjeta (la parte "glass") */
+/* Contenido "Glass" */
 .attribute-box .attribute-content {
     position: relative;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.5); /* Fondo glass sutil sobre blanco */
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -585,14 +549,11 @@ html {
     z-index: 10;
     transition: 0.5s;
     text-align: center;
-    /* 3. CAMBIO: El texto dentro de la tarjeta ahora debe ser oscuro */
     color: #555;
 }
-
 .attribute-box:hover .attribute-content {
     transform: translateY(-20px);
 }
-
 .attribute-content img {
     width: 100%;
     height: 150px;
@@ -600,26 +561,13 @@ html {
     border-radius: 8px;
     margin-bottom: 1rem;
 }
-
-/* 3. CAMBIO: Título de la tarjeta oscuro */
-.attribute-content h2 {
-    font-size: 1.8rem;
-    color: #1a1a1a;
-    margin-bottom: 10px;
-}
-
-.attribute-content p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-/* 3. CAMBIO: Botón con colores que contrasten */
+.attribute-content h2 { font-size: 1.8rem; color: #1a1a1a; margin-bottom: 10px; }
+.attribute-content p { font-size: 1rem; margin-bottom: 1rem; line-height: 1.6; }
 .attribute-content a {
     display: inline-block;
     font-size: 1rem;
     color: #ffffff;
-    background: #79c548; /* Fondo verde para el botón */
+    background: #79c548;
     padding: 10px 20px;
     border-radius: 50px;
     text-decoration: none;
@@ -627,24 +575,21 @@ html {
     margin-top: 5px;
     transition: 0.3s ease;
 }
-
 .attribute-content a:hover {
-    background: #5c810d; /* Verde más oscuro */
-    color: #ffffff;
+    background: #5c810d;
 }
 
-/* Brillos flotantes (ajustamos el color para que se vea sobre blanco) */
+/* Brillos flotantes */
 @keyframes animate-glow {
     0%, 100% { transform: translateY(10px); }
     50% { transform: translateY(-10px); }
 }
-
 .attribute-box span::before,
 .attribute-box span::after {
     content: '';
     position: absolute;
     border-radius: 8px;
-    background: rgba(121, 197, 72, 0.1); /* Brillo verde muy sutil */
+    background: rgba(121, 197, 72, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     opacity: 0;
@@ -652,66 +597,84 @@ html {
     animation: animate-glow 4s ease-in-out infinite;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
+.attribute-box:hover span::before { top: -40px; left: 40px; width: 80px; height: 80px; opacity: 1; }
+.attribute-box:hover span::after { bottom: -40px; right: 40px; width: 80px; height: 80px; opacity: 1; animation-delay: -2s; }
 
-.attribute-box:hover span::before {
-    top: -40px;
-    left: 40px;
-    width: 80px;
-    height: 80px;
-    opacity: 1;
+
+/* --- 10. SECCIÓN VARIEDADES DE PASAS (Efecto Cursor Interactivo) --- */
+
+#variedades {
+    background-color: #ffffff;
+    padding: 5rem 0;
 }
-
-.attribute-box:hover span::after {
-    bottom: -40px;
-    right: 40px;
-    width: 80px;
-    height: 80px;
-    opacity: 1;
-    animation-delay: -2s;
+#variedades .section-title {
+    color: #1a1a1a;
 }
-
-
-/* --- 10. SECCIÓN CTA "PASAS PUEBLO BLANCO" --- */
-
-.cta-section {
-    min-height: 70vh;
-    color: #fff;
-    display: flex;
-    align-items: center;
+.variety-card {
     position: relative;
+    overflow: hidden;
+    height: 175px;
+    border-radius: 25px;
+    background-color: #1b4166;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.4s ease;
+    box-shadow:   1px 5px rgba(0,0,0,0.1);
 }
-.cta-section::before {
+.variety-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
+    width: 150%;
+    height: 150%;
+    background: linear-gradient(45deg, transparent, var(--border-color), transparent);
+    opacity: 0.15;
+    top: -125%;
+    left: -125%;
+    transition: all 0.6s ease;
+}
+.variety-card:hover::before {
+    top: 100%;
+    left: 100%;
+}
+.variety-card img {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(44, 62, 80, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%);
-    z-index: 1;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: brightness(1);
 }
-.cta-section .container { position: relative; z-index: 2; }
-.cta-title {
-    font-size: 4.5rem;
-    font-weight: 800;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+.variety-card:hover img {
+    transform: scale(1.1);
+}
+.variety-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
     color: #ffffff;
-    line-height: 1.1;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: left;
+    transition: all 0.4s ease;
 }
-.cta-subtitle {
-    font-size: 2.2rem;
-    font-weight: 400;
-    margin-top: 1rem;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
-    color: #ffc091;
-    border-left: 4px solid #ffc091;
-    padding-left: 1.5rem;
+.variety-card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.1);
+    border-color: var(--border-color);
 }
 @media (max-width: 767px) {
-    .cta-title { font-size: 3rem; }
-    .cta-subtitle { font-size: 1.5rem; }
+    #variedades .row > [class*="col-"] {
+        margin-bottom: 1.5rem;
+    }
+    .variety-card {
+        height: 200px;
+    }
+    .variety-name {
+        font-size: 1.2rem;
+    }
 }
-
 
 /* --- 11. SECCIÓN FAQ (PREGUNTAS FRECUENTES) --- */
 
@@ -760,7 +723,7 @@ html {
 
 .contact-form-card h4, .contact-info-card h4 {
     font-weight: 700;
-    color: #2c3e50;
+    color: #982c53;
 }
 
 .contact-form-card .form-control, .contact-form-card .form-select {
@@ -771,7 +734,7 @@ html {
 
 .contact-form-card .form-control:focus, .contact-form-card .form-select:focus {
     background-color: #fff;
-    border-color: #79c548;
+    border-color: #32694a;
     box-shadow: 0 0 0 0.25rem rgba(121, 197, 72, 0.25);
 }
 
@@ -794,7 +757,7 @@ html {
 
 /* Tarjeta de información de contacto */
 .contact-info-card {
-    background-color: #8111c2; /* Fondo oscuro para contraste */
+    background-color: #982c53; /* Fondo oscuro para contraste */
     color: #f0f0f0;
     padding: 2.5rem;
     border-radius: 16px;
@@ -813,14 +776,14 @@ html {
 
 .contact-info-item .icon {
     font-size: 1.8rem;
-    color: #79c548;
+    color: #32694a;
     margin-right: 1.5rem;
 }
 
 .contact-info-item .text span {
     display: block;
     font-size: 0.9rem;
-    color: #adb5bd;
+    color: #F8F8FA;
     text-transform: uppercase;
 }
 
@@ -833,12 +796,12 @@ html {
 }
 
 .contact-info-item .text a:hover {
-    color: #79c548;
+    color: #32694a;
 }
 
 .contact-notice {
     background-color: rgba(255, 255, 255, 0.1);
-    border-left: 3px solid #79c548;
+    border-left: 3px solid #32694a;
     padding: 0.8rem 1rem;
     border-radius: 4px;
     font-size: 0.9rem;
@@ -847,23 +810,23 @@ html {
 /* --- 13. FOOTER --- */
 
 .footer-section {
-    background-color: #2c3e50;
-    color: #adb5bd;
+    background-color: #982c53;
+    color: #F8F8FA;
     padding-top: 4rem;
 }
 .footer-title {
-    color: #79c548;
+    color: #F8F8FA;
     margin-bottom: 1.5rem;
     font-weight: 700;
 }
 .footer-section p, .footer-section h6 {
-    color: #adb5bd;
+    color: #F8F8FA;
 }
 .footer-section h6 {
     font-size: 1.1rem;
 }
 .footer-section i {
-    color: #79c548;
+    color: #BDBDBD;
 }
 .footer-social a {
     display: inline-flex;
@@ -871,20 +834,20 @@ html {
     justify-content: center;
     width: 40px;
     height: 40px;
-    border: 1px solid #79c548;
+    border: 1px solid #32694a;
     border-radius: 50%;
-    color: #79c548;
+    color: #32694a;
     margin-right: 0.5rem;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 .footer-social a:hover {
-    background-color: #79c548;
+    background-color: #32694a;
     color: #fff;
 }
 .footer-link {
     display: block;
-    color: #adb5bd;
+    color: #F8F8FA;
     text-decoration: none;
     margin-bottom: 0.5rem;
     transition: all 0.3s ease;
@@ -893,7 +856,7 @@ html {
     content: '\F285';
     font-family: 'bootstrap-icons';
     margin-right: 0.5rem;
-    color: #79c548;
+    color: #32694a;
 }
 .footer-link:hover {
     color: #fff;
@@ -906,10 +869,10 @@ html {
     border-radius: 8px 0 0 8px;
 }
 .footer-section .form-control::placeholder {
-    color: #adb5bd;
+    color: #F8F8FA;
 }
 .btn-subscribe {
-    background-color: #79c548;
+    background-color: #32694a;
     color: #fff;
     border: none;
     border-radius: 0 8px 8px 0;
@@ -919,12 +882,17 @@ html {
     right: 0;
 }
 .copyright-bar {
-    background-color: #1e3547;
+    background-color: #982c53;
     padding: 1rem 0;
     font-size: 0.9rem;
 }
 .copyright-bar a {
-    color: #79c548;
+    color: #BDBDBD;
     text-decoration: none;
     font-weight: 600;
+}
+
+.copyright-bar a:hover {
+    color: #fff;
+    padding-left: 5px;
 }
