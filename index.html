@@ -24,122 +24,88 @@
 </head>
 <body>
 
-    <header id="header-nav">
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#main-hero-parallax">
-                    <img src="./assets/images/logo-138x138.png" alt="Latitud S.R.L Logo" class="navbar-logo-img">
-                    <span class="navbar-brand-name">Latitud S.R.L</span>
-                </a>
-    
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                <div class="collapse navbar-collapse" id="mainNav">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#hero">
-                                <span class="nav-icon-wrapper"><ion-icon name="home-outline"></ion-icon></span>
-                                <span class="nav-link-title">Home</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#productos">
-                                <span class="nav-icon-wrapper"><ion-icon name="basket-outline"></ion-icon></span>
-                                <span class="nav-link-title">Productos</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#locaciones">
-                                <span class="nav-icon-wrapper"><ion-icon name="map-outline"></ion-icon></span>
-                                <span class="nav-link-title">Locaciones</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#rse"> <!-- Asegúrate de tener una sección con id="rse" -->
-                                <span class="nav-icon-wrapper"><ion-icon name="leaf-outline"></ion-icon></span>
-                                <span class="nav-link-title">RSE</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#team"> <!-- Asegúrate de tener una sección con id="team" -->
-                                <span class="nav-icon-wrapper"><ion-icon name="people-outline"></ion-icon></span>
-                                <span class="nav-link-title">Team</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#nosotros">
-                                <span class="nav-icon-wrapper"><ion-icon
-                                        name="information-circle-outline"></ion-icon></span>
-                                <span class="nav-link-title">Sobre Nosotros</span>
-                            </a>
-                        </li>
-                    </ul>
-    
-                    <div class="navbar-contact">
-                        <a class="nav-icon" href="tel:+123456789">
-                            <i class="bi bi-telephone"></i>
+<!-- =================================================================
+HEADER / MENÚ DE NAVEGACIÓN
+================================================================== -->
+<header id="header-nav">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <!-- Logo y Nombre de la Marca -->
+            <a class="navbar-brand" href="#main-hero-parallax">
+                <!-- El logo ahora está aquí, pero lo controlaremos con CSS -->
+                <img src="./assets/images/logo3.png" alt="Latitud S.R.L Logo" class="navbar-logo-img">
+            </a>
+
+            <!-- Botón Hamburguesa para Móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Contenido Colapsable del Menú -->
+            <div class="collapse navbar-collapse" id="mainNav">
+                <!-- Links de Navegación Actualizados -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#main-hero-parallax">
+                            <span class="nav-icon-wrapper"><ion-icon name="home-outline"></ion-icon></span>
+                            <span class="nav-link-title">Home</span>
                         </a>
-                    </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">
+                            <span class="nav-icon-wrapper"><ion-icon name="basket-outline"></ion-icon></span>
+                            <span class="nav-link-title">Productos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#procesos"> <!-- CAMBIO DE NOMBRE -->
+                            <span class="nav-icon-wrapper"><ion-icon name="map-outline"></ion-icon></span>
+                            <span class="nav-link-title">Procesos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">
+                            <span class="nav-icon-wrapper"><ion-icon name="information-circle-outline"></ion-icon></span>
+                            <span class="nav-link-title">Sobre Nosotros</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Icono de Contacto -->
+                <div class="navbar-contact">
+                    <a class="nav-icon" href="tel:+123456789">
+                        <i class="bi bi-telephone"></i>
+                    </a>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
+<!-- =================================================================
+SECCIÓN HERO Y SOBRE NOSOTROS (UNIFICADAS) - VERSIÓN LOGO MINIMALISTA
+================================================================== -->
+<section id="main-hero-parallax" class="main-hero-parallax jarallax">
+    <!-- Imagen de fondo del Hero -->
+    <img class="jarallax-img" src="./assets/images/herodefinitivo.png" alt="Viñedos de San Juan">
+    
+    <!-- Capa de superposición para dar un poco de contraste -->
+    <div class="hero-overlay"></div>
 
-    <section id="main-hero-parallax" class="main-hero-parallax jarallax">
-        <img class="jarallax-img" src="./assets/images/photo-1664609024442-d2394715a955.jpeg" alt="Viñedos de San Juan">
-
-        <div class="hero-content-wrapper">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center justify-content-center text-center">
-                    <div class="col-12 col-md-10">
-                        <h1 class="hero-title">Lo mejor de San Juan</h1>
-                        <p class="hero-subtitle">
-                            Latitud S.R.L. Pruebe la esencia bañada por el sol de las uvas y pasas premium de Argentina.
-                        </p>
+    <!-- Contenedor para la tarjeta "Sobre Nosotros" que se monta encima -->
+    <div id="nosotros" class="about-us-content-wrapper">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- La columna ahora puede ser más estrecha para enfocar en el logo -->
+                <div class="col-12 col-md-10 col-lg-8"> 
+                    <div class="about-us-card glass-card">
+                        <!-- El único contenido de la tarjeta es el logo -->
+                        <img src="./assets/images/logo_sin fodo.png" class="pueblo-blanco-logo" alt="Logo Pueblo Blanco Pasas de Uva">
                     </div>
                 </div>
             </div>
         </div>
-
-        <div id="about-section-part" class="about-us-content-wrapper">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-11">
-                        <div class="about-us-card glass-card">
-                            <div class="row g-0">
-                                <div class="col-lg-5">
-                                    <div class="about-us-image">
-                                        <img src="./assets/images/uvasnegras.png" alt="Cultivos de Latitud S.R.L">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-7">
-                                    <div class="about-us-text">
-                                        <h2 class="about-us-title">
-                                            Raíces con sostenibilidad y sustentabilidad en San Juan para el mundo
-                                        </h2>
-                                        <p>
-                                            Desde el corazón de San Juan, Argentina, Latitud S.R.L. lleva generaciones cultivando los dulces de la naturaleza. No somos solo agricultores; somos amantes del sol y del cuidado de la tierra, dedicados a ofrecerte lo mejor.
-                                        </p>
-                                        <p>
-                                            Nuestra misión es simple: capturar el vibrante espíritu de San Juan en cada uva y pasa que producimos. Creemos en la agricultura honesta, respetando la tierra que nos nutre y entregando una calidad inigualable directamente a su mesa.
-                                        </p>
-                                        <p>
-                                            Somos una empresa, un equipo y un legado, impulsados por la pasión por la perfección. Nuestro compromiso es con el planeta, con nuestra comunidad y con usted, nuestro valioso cliente. ¡Prepárese para una explosión de sabor!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    </div>
+</section>
 <!-- =================================================================
 SECCIÓN CALIDAD (IMAGEN Y TEXTO) - VERSIÓN MEJORADA
 ================================================================== -->
@@ -214,20 +180,32 @@ SECCIÓN CALIDAD (IMAGEN Y TEXTO) - VERSIÓN MEJORADA
         </div>
     </section>
 
-    <!-- =================================================================
-SECCIÓN MAPA Y UBICACIÓN - VERSIÓN MEJORADA
+<!-- =================================================================
+SECCIÓN MAPA Y UBICACIÓN - VERSIÓN MEJORADA "DE SAN JUAN AL MUNDO"
 ================================================================== -->
-<section id="locaciones" class="location-section jarallax" data-video-src="https://vimeo.com/428046504">
-    <div class="location-overlay"></div>
+<section id="locaciones" class="location-section-v2">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
-                <h2 class="section-title text-start mb-3">San Juan en las alturas de Cuyo</h2>
-                <p>Nuestra geografía, desde el pie de la Cordillera hasta el cerro Mercedario, junto al sol y clima característicos de Cuyo, ayudan a hacer únicos nuestros productos.</p>
+            <!-- Columna de Texto -->
+            <div class="col-lg-5 text-content" data-aos="fade-right">
+                <h2 class="section-title text-start mb-3">De San Juan al Mundo</h2>
+                <p class="lead">Nuestra raíz está en el corazón de los Andes, en la soleada provincia de San Juan, Argentina.</p>
+                <p>Desde este origen único, cultivamos y exportamos sabores que trascienden fronteras, llevando la calidad y la pasión de nuestra tierra a los mercados más exigentes del planeta.</p>
             </div>
-            <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553035.5578927337!2d-68.4366858513306!3d-31.34020730605363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96814029a33cd497%3A0xbff3a3a0233cfcb3!2sSan%20Juan!5e1!3m2!1ses!2sar!4v1757010570494!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <!-- Columna del Mapa Interactivo -->
+            <div class="col-lg-7" data-aos="zoom-in-up">
+                <div class="interactive-map-container">
+                    <!-- Mapa 1: Mundo (visible por defecto) -->
+                    <div class="map-layer map-world">
+                        <img src="assets/images/argentina.png" alt="Argentina en el mundo">
+                        <div class="map-label">Alcance Global</div>
+                    </div>
+                    <!-- Mapa 2: Argentina (aparece al pasar el cursor) -->
+                    <div class="map-layer map-argentina">
+                        <img src="assets/images/sanjuan.png" alt="San Juan en Argentina">
+                        <div class="map-label">Nuestro Origen</div>
+                    </div>
                 </div>
             </div>
         </div>

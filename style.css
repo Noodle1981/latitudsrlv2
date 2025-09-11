@@ -43,52 +43,51 @@ html {
 }
 
 
-/* --- 2. HEADER / MENÚ DE NAVEGACIÓN --- */
-/* --- 2. HEADER / MENÚ DE NAVEGACIÓN (Efecto Gradiente Morado) --- */
+/* --- 2. HEADER / MENÚ DE NAVEGACIÓN (Versión 3.0) --- */
+
+/* ---- ESTADO INICIAL (SOBRE EL HERO) ---- */
 
 #header-nav .navbar {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     transition: all 0.4s ease-in-out;
 }
+
+/* 2. El contenedor empieza con efecto de cristal */
 #header-nav .navbar .container {
-    background: transparent;
-    backdrop-filter: none;
-    box-shadow: none;
+    background: rgba(255, 255, 255, 0.1); /* Glass sutil */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
     padding: 0.5rem 1rem;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* ESTADO AL HACER SCROLL */
-#header-nav.scrolled .navbar { padding: 0.5rem 0; }
-#header-nav.scrolled .navbar .container {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+/* 1. El logo está oculto por defecto */
+#header-nav .navbar-logo-img {
+    height: 0;
+    opacity: 0;
+    margin-right: 0;
+    transition: all 0.4s ease-in-out;
 }
 
-/* Logo y Marca */
-#header-nav .navbar-logo-img { height: 3.5rem; margin-right: 1rem; transition: all 0.4s ease-in-out; border-radius: 50%; object-fit: cover; }
-#header-nav.scrolled .navbar-logo-img { height: 2.5rem; }
-#header-nav .navbar-brand-name { font-weight: 700; font-size: 1.5rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); transition: color 0.4s ease-in-out; }
-#header-nav.scrolled .navbar-brand-name { color: #260a30; text-shadow: none; }
-
-/* Links de Navegación - EL NUEVO EFECTO */
-#header-nav .nav-item {
-    list-style: none;
+/* El "by Latitud S.R.L" está oculto por defecto */
+#header-nav .navbar-brand-name {
+    display: none;
 }
+
+/* Links de navegación */
 #header-nav .nav-link {
     position: relative;
-    background: #fff;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background: transparent; /* No tiene fondo de píldora */
+    box-shadow: none;
     border-radius: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.5s;
-    padding: 0.5rem 1rem !important; /* Ajuste de padding */
+    padding: 0.5rem 1rem !important;
     margin: 0 0.5rem;
     text-decoration: none;
 }
@@ -99,8 +98,7 @@ html {
     position: absolute;
     inset: 0;
     border-radius: 60px;
-    /* TU GRADIENTE MORADO */
-    background: linear-gradient(45deg, #982c53, #ea51ff);
+    background: linear-gradient(45deg, #982c53, #32694a);
     opacity: 0;
     transition: 0.5s;
 }
@@ -113,7 +111,7 @@ html {
     width: 100%;
     height: 100%;
     border-radius: 60px;
-    background: linear-gradient(45deg, #982c53, #ea51ff);
+    background: linear-gradient(45deg, #982c53, #32694a);
     transition: 0.5s;
     filter: blur(15px);
     z-index: -1;
@@ -121,59 +119,116 @@ html {
 }
 
 /* Animación al pasar el cursor */
-#header-nav .nav-link:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0); /* Quitamos la sombra blanca */
-}
 #header-nav .nav-link:hover::before { opacity: 1; }
 #header-nav .nav-link:hover::after { opacity: 0.5; }
 
 /* Contenido del Link (Icono y Título) */
 #header-nav .nav-link-title {
-    color: #555; /* Color inicial del texto */
+    color: #fff; /* Texto blanco sobre el hero */
     font-size: 1rem;
     font-weight: 500;
-    font-family: 'Poppins', sans-serif; /* Usamos la nueva fuente */
+    font-family: 'Poppins', sans-serif;
     transition: 0.5s;
     margin-left: 0.5rem;
-}
-#header-nav .nav-link:hover .nav-link-title {
-    color: #fff; /* Texto blanco al hacer hover */
+    position: relative; /* Para que esté sobre el gradiente */
+    z-index: 2;
 }
 
-#header-nav .nav-icon-wrapper ion-icon {
-    color: #777;
-    font-size: 1.5em;
-    transition: 0.5s;
-}
-#header-nav .nav-link:hover .nav-icon-wrapper ion-icon {
+/* 4. Aseguramos que el texto sea siempre blanco, incluso con el hover */
+#header-nav .nav-link:hover .nav-link-title {
     color: #fff;
 }
 
-/* Ocultamos los iconos en la versión móvil para más espacio */
-@media (max-width: 991px) {
-    #header-nav .nav-icon-wrapper { display: none; }
-    #header-nav .nav-link-title { margin-left: 0; }
+#header-nav .nav-icon-wrapper ion-icon {
+    color: #fff;
+    font-size: 1.5em;
+    transition: 0.5s;
+    position: relative;
+    z-index: 2;
 }
 
-/* Restauramos la apariencia del menú flotante al hacer scroll */
+
+/* ---- ESTADO AL HACER SCROLL (.scrolled) ---- */
+
+#header-nav.scrolled .navbar .container {
+    background: rgba(255, 255, 255, 0.85); /* Fondo blanco más sólido */
+}
+
+/* 1. El logo aparece al hacer scroll */
+#header-nav.scrolled .navbar-logo-img {
+    /* ACA PUEDES MODIFICAR EL ALTO */
+    height: 60px; /* Tamaño del logo más grande */
+    opacity: 1;
+    margin-right: 1rem;
+    border-radius: 0; /* Sin borde redondeado */
+}
+
+/* El "by Latitud S.R.L" aparece al hacer scroll */
+#header-nav.scrolled .navbar-brand-name {
+    display: block; /* Lo hacemos visible */
+    color: #260a30; /* Color oscuro */
+    text-shadow: none;
+}
+
+/* Los links con fondo de píldora ahora son transparentes */
 #header-nav.scrolled .nav-link {
     background-color: transparent;
     box-shadow: none;
 }
-#header-nav.scrolled .nav-link::before, #header-nav.scrolled .nav-link::after {
-    display: none; /* Desactivamos el efecto morado cuando el menú es sólido */
+/* Se desactiva el efecto de gradiente morado al hacer scroll */
+#header-nav.scrolled .nav-link::before,
+#header-nav.scrolled .nav-link::after {
+    display: none;
 }
-#header-nav.scrolled .nav-link-title { color: #555; }
-#header-nav.scrolled .nav-link:hover .nav-link-title { color: #260a30 !important; }
-#header-nav.scrolled .nav-icon-wrapper ion-icon { color: #777; }
-#header-nav.scrolled .nav-link:hover .nav-icon-wrapper ion-icon { color: #260a30; }
 
-/* Icono de Contacto y Hamburguesa (mantienen el estilo anterior) */
+/* El texto de los links se vuelve oscuro */
+#header-nav.scrolled .nav-link-title {
+    color: #555;
+    text-shadow: none;
+}
+#header-nav.scrolled .nav-link:hover .nav-link-title {
+    color: #260a30 !important;
+}
+
+/* Los iconos se vuelven oscuros */
+#header-nav.scrolled .nav-icon-wrapper ion-icon {
+    color: #777;
+}
+#header-nav.scrolled .nav-link:hover .nav-icon-wrapper ion-icon {
+    color: #260a30;
+}
+
+/* Icono de contacto y hamburguesa */
 #header-nav .nav-icon { font-size: 1.5rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); transition: color 0.4s ease-in-out; }
 #header-nav.scrolled .nav-icon { color: #260a30; text-shadow: none; }
 #header-nav .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 #header-nav.scrolled .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 
+/* Ocultamos iconos en móvil */
+@media (max-width: 991px) {
+    #header-nav .nav-icon-wrapper { display: none; }
+    #header-nav .nav-link-title { margin-left: 0; }
+    #header-nav .navbar-collapse {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    #header-nav .nav-link, #header-nav.scrolled .nav-link {
+        color: #555 !important;
+        text-shadow: none;
+    }
+    #header-nav .nav-link:hover, #header-nav.scrolled .nav-link:hover, #header-nav .nav-link.active {
+        color: #260a30 !important;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    /* El logo siempre será visible en móvil para no dejar un hueco vacío */
+    #header-nav .navbar-logo-img { height: 2.5rem; opacity: 1; margin-right: 0.5rem; border-radius: 0; }
+    #header-nav .navbar-brand-name { display: block; color: #260a30; text-shadow: none; font-size: 1.2rem; }
+}
 /* --- 3. SECCIÓN HERO Y SOBRE NOSOTROS (UNIFICADAS) --- */
 
 .main-hero-parallax {
@@ -199,7 +254,7 @@ html {
 
 .about-us-content-wrapper {
     padding-bottom: 80px;
-    margin-top: -150px;
+    margin-top: -150px; /* Sube la tarjeta para que se monte sobre el hero */
     position: relative;
     z-index: 3;
 }
@@ -210,12 +265,56 @@ html {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 2.5rem;
+    padding: 0; /* Quitamos el padding para que la imagen ocupe todo */
+    overflow: hidden; /* Muy importante para los bordes redondeados */
 }
-.about-us-image { border-radius: 16px; overflow: hidden; height: 100%; min-height: 350px; }
-.about-us-image img { width: 100%; height: 100%; object-fit: cover; }
-.about-us-text { padding: 2.5rem; color: #fff; }
-.about-us-title { color: #fff; font-size: 2rem; font-weight: 700; }
+.about-us-image {
+    height: 100%;
+    min-height: 400px; /* Asegura una altura mínima */
+}
+.about-us-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* NUEVOS ESTILOS PARA EL LOGO Y EL TEXTO DE MISIÓN */
+.about-us-text {
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pueblo-blanco-logo {
+    max-width: 80%; /* Ajusta el tamaño del logo */
+    height: auto;
+    margin-bottom: 2rem;
+    /* Efecto sutil para que el logo se vea mejor sobre el fondo glass */
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
+}
+.about-us-mission-text {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 991px) {
+    .about-us-image {
+        min-height: 300px;
+        border-radius: 16px 16px 0 0; /* Bordes redondeados solo arriba en móvil */
+    }
+    .about-us-card .row > [class*="col-"] {
+        text-align: center;
+    }
+    .about-us-text {
+        padding: 2rem;
+    }
+}
 
 
 /* --- 4. SECCIÓN CERTIFICACIONES --- */
@@ -345,76 +444,114 @@ html {
 #estadisticas .stat-text { color: #555; }
 
 
-/* --- 7. SECCIÓN MAPA Y UBICACIÓN --- */
+/* --- 7. SECCIÓN MAPA Y UBICACIÓN - "DE SAN JUAN AL MUNDO" (Refinado con Sombra de Color) --- */
 
-.location-section {
-    position: relative;
+.location-section-v2 {
     padding: 6rem 0;
-    color: #ffffff;
+    background-color: #f7f9fc;
+    overflow: hidden;
 }
 
-/* Overlay de gradiente más inteligente */
-.location-overlay {
+.location-section-v2 .text-content p.lead {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.location-section-v2 .text-content p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.interactive-map-container {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    cursor: pointer;
+}
+
+.map-layer {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(18, 18, 18, 0.8) 0%, rgba(18, 18, 18, 0.2) 60%, rgba(18, 18, 18, 0) 100%);
-    z-index: 2;
-}
-
-.location-section .container {
-    position: relative;
-    z-index: 3;
-}
-
-/* Quitamos la caja de fondo */
-.location-section .col-lg-5 {
-    background-color: transparent;
-    padding: 0;
-    backdrop-filter: none;
-}
-
-.location-section .section-title {
-    color: #ffffff;
-    /* Sombra de texto más fuerte para garantizar legibilidad */
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-}
-
-.location-section p {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: #f0f0f0;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-}
-
-.map-wrapper {
-    height: 450px;
-    border-radius: 12px;
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    border: 3px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.4s ease;
+    /* SOMBRA INICIAL: Sutil y neutra */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.map-wrapper iframe {
+.map-layer img {
     width: 100%;
     height: 100%;
-    border: 0;
-    filter: grayscale(80%) contrast(1.1); /* Efecto de mapa estilizado */
-    transition: filter 0.4s ease;
+    object-fit: cover;
+    object-position: center center;
+    transition: transform 0.6s ease; /* Sincronizamos la transición */
 }
 
-.map-wrapper:hover {
-    transform: scale(1.03);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+/* ESTADO INICIAL DE LAS CAPAS */
+.map-world {
+    z-index: 10;
+    transform: scale(1);
+    opacity: 1;
 }
 
-.map-wrapper:hover iframe {
-    filter: grayscale(0%) contrast(1); /* El mapa recupera el color al pasar el cursor */
+.map-argentina {
+    z-index: 9;
+    transform: scale(0.8);
+    opacity: 0;
 }
 
+
+/* EFECTO HOVER */
+.interactive-map-container:hover .map-world {
+    transform: scale(1.05) translateY(-10px); /* Un poco más sutil que antes */
+    opacity: 0;
+    /* SOMBRA DE COLOR VERDE AL DESAPARECER */
+    box-shadow: 0 25px 50px rgba(50, 105, 74, 0.3); /* Sombra con tu color #32694a */
+}
+
+.interactive-map-container:hover .map-argentina {
+    transform: scale(1.05) translateY(-10px); /* Crece y se eleva */
+    opacity: 1;
+    /* SOMBRA DE COLOR MAGENTA AL APARECER */
+    box-shadow: 0 25px 50px rgba(152, 44, 83, 0.3); /* Sombra con tu color #982c53 */
+}
+
+/* La imagen también reacciona de forma más sutil */
+.interactive-map-container:hover .map-layer img {
+    transform: scale(1.1);
+}
+
+
+/* ETIQUETAS DE TEXTO SOBRE LOS MAPAS (sin cambios) */
+.map-label {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: rgba(18, 18, 18, 0.7);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: opacity 0.4s ease;
+}
+
+.map-argentina .map-label {
+    opacity: 0;
+}
+
+.interactive-map-container:hover .map-argentina .map-label {
+    opacity: 1;
+    transition-delay: 0.3s;
+}
 
 /* ==========================================================================
    ESTILOS ESPECÍFICOS PARA SECCIONES DE TARJETAS
@@ -601,78 +738,91 @@ html {
 .attribute-box:hover span::after { bottom: -40px; right: 40px; width: 80px; height: 80px; opacity: 1; animation-delay: -2s; }
 
 
-/* --- 10. SECCIÓN VARIEDADES DE PASAS (Efecto Cursor Interactivo) --- */
+/* --- 10. SECCIÓN VARIEDADES DE PASAS (Efecto Cuadrado Moderno) --- */
 
 #variedades {
     background-color: #ffffff;
     padding: 5rem 0;
 }
+
 #variedades .section-title {
     color: #1a1a1a;
 }
+
 .variety-card {
     position: relative;
     overflow: hidden;
-    height: 175px;
-    border-radius: 25px;
-    background-color: #1b4166;
     cursor: pointer;
-    border: 3px solid transparent;
-    transition: all 0.4s ease;
-    box-shadow:   1px 5px rgba(0,0,0,0.1);
+    border-radius: 16px;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 2px solid var(--border-color);
 }
-.variety-card::before {
-    content: '';
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    background: linear-gradient(45deg, transparent, var(--border-color), transparent);
-    opacity: 0.15;
-    top: -125%;
-    left: -125%;
-    transition: all 0.6s ease;
+
+.variety-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
 }
-.variety-card:hover::before {
-    top: 100%;
-    left: 100%;
-}
+
 .variety-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease, filter 0.4s ease;
-    filter: brightness(1);
+    transition: transform 0.4s ease;
 }
+
 .variety-card:hover img {
     transform: scale(1.1);
 }
+
+.variety-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient( to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0) 100% );
+    transform: skewX(-25deg);
+    transition: left 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.variety-card:hover::after {
+    left: 150%;
+}
+
 .variety-name {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background-color: var(--border-color);
     color: #ffffff;
-    font-size: 1.5rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1.4rem;
     font-weight: 700;
-    text-align: left;
+    display: inline-block;
+    width: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: all 0.4s ease;
 }
-.variety-card:hover {
-    transform: scale(1.05) translateY(-10px);
-    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.1);
-    border-color: var(--border-color);
+
+.variety-card:hover .variety-name {
+    filter: brightness(1.1);
 }
+
+/* REGLAS RESPONSIVAS PARA MÓVILES */
 @media (max-width: 767px) {
-    #variedades .row > [class*="col-"] {
-        margin-bottom: 1.5rem;
+    #variedades {
+        padding: 3rem 0;
     }
-    .variety-card {
-        height: 200px;
-    }
+    
     .variety-name {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+        bottom: 1rem;
+        left: 1rem;
     }
 }
 
