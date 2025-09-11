@@ -233,89 +233,108 @@ html {
 
 .main-hero-parallax {
     min-height: 100vh;
-    padding-top: 100px;
-    padding-bottom: 80px;
+    padding-bottom: 80px; /* Espacio para que la tarjeta no se pegue abajo */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
 }
+
+.jarallax-img {
+    /* Por defecto, centramos la imagen */
+    object-position: center center;
+}
+
 .hero-content-wrapper {
-    height: 100vh;
+    flex-grow: 1; /* Permite que este contenedor ocupe el espacio disponible */
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     z-index: 2;
+    padding-top: 100px; /* Espacio para el menú */
 }
 .hero-title { font-size: 4rem; font-weight: 700; line-height: 1.2; }
-.hero-subtitle { font-size: 1.5rem; font-weight: 400; }
+.hero-subtitle { font-size: 1.5rem; font-weight: 400; max-width: 800px; margin: 1rem auto 0;}
 
 .about-us-content-wrapper {
-    padding-bottom: 80px;
-    margin-top: -150px; /* Sube la tarjeta para que se monte sobre el hero */
+    margin-top: -200px; /* La superposición en escritorio */
     position: relative;
     z-index: 3;
+    transition: margin-top 0.4s ease;
 }
 .about-us-card {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 0; /* Quitamos el padding para que la imagen ocupe todo */
-    overflow: hidden; /* Muy importante para los bordes redondeados */
-}
-.about-us-image {
-    height: 100%;
-    min-height: 400px; /* Asegura una altura mínima */
-}
-.about-us-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* NUEVOS ESTILOS PARA EL LOGO Y EL TEXTO DE MISIÓN */
-.about-us-text {
-    padding: 2rem 3rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 3rem;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .pueblo-blanco-logo {
-    max-width: 80%; /* Ajusta el tamaño del logo */
+    max-width: 100%;
     height: auto;
-    margin-bottom: 2rem;
-    /* Efecto sutil para que el logo se vea mejor sobre el fondo glass */
-    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
-}
-.about-us-mission-text {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    max-width: 500px;
-    text-align: center;
+    filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.4));
 }
 
-/* Ajustes responsivos */
+
+/* ====================================================
+   REGLAS RESPONSIVAS PARA MANTENER EL EFECTO
+   ==================================================== */
+
 @media (max-width: 991px) {
-    .about-us-image {
-        min-height: 300px;
-        border-radius: 16px 16px 0 0; /* Bordes redondeados solo arriba en móvil */
+    .main-hero-parallax {
+        /* 1. Hacemos el hero más corto en tablets y móviles */
+        min-height: 80vh; 
     }
-    .about-us-card .row > [class*="col-"] {
-        text-align: center;
+
+    #main-hero-parallax .jarallax-img {
+        /* 3. Nos enfocamos en la parte de abajo de la imagen */
+        object-position: bottom center;
     }
-    .about-us-text {
-        padding: 2rem;
+
+    .hero-title {
+        font-size: 3rem;
+    }
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .about-us-content-wrapper {
+        /* 2. Reducimos la superposición para que no tape el texto */
+        margin-top: -100px;
     }
 }
 
+@media (max-width: 575px) {
+    .main-hero-parallax {
+        min-height: 70vh; /* Aún más corto en móviles pequeños */
+    }
+
+    .hero-content-wrapper {
+        padding-top: 80px; /* Menos espacio para el menú en móvil */
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .about-us-content-wrapper {
+        margin-top: -80px; /* Superposición mínima */
+    }
+
+    .about-us-card {
+        padding: 1.5rem; /* Menos padding en la tarjeta de cristal */
+    }
+}
 
 /* --- 4. SECCIÓN CERTIFICACIONES --- */
 
