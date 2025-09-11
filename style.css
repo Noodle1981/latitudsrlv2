@@ -834,15 +834,15 @@ html {
     justify-content: center;
     width: 40px;
     height: 40px;
-    border: 1px solid #32694a;
+    border: 1px solid #BDBDBD;
     border-radius: 50%;
-    color: #32694a;
+    color: #BDBDBD;
     margin-right: 0.5rem;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 .footer-social a:hover {
-    background-color: #32694a;
+    background-color: #bdbdbd65;
     color: #fff;
 }
 .footer-link {
@@ -856,7 +856,7 @@ html {
     content: '\F285';
     font-family: 'bootstrap-icons';
     margin-right: 0.5rem;
-    color: #32694a;
+    color: #BDBDBD;
 }
 .footer-link:hover {
     color: #fff;
