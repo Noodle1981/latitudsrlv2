@@ -1,13 +1,11 @@
 /* ==========================================================================
-   ESTILOS PERSONALIZADOS - LATITUD S.R.L.
-   Versión Final
+   ESTILOS PERSONALIZADOS - LATITUD S.R.L. - VERSIÓN FINAL CORREGIDA
    ========================================================================== */
 
 /* --- 1. ESTILOS GLOBALES Y DE BASE --- */
-
 body {
     font-family: 'Inter Tight', sans-serif;
-    background-color: #f7f9fc; /* Fondo gris claro general */
+    background-color: #f7f9fc;
 }
 
 html {
@@ -41,229 +39,150 @@ html {
 .bg-light {
     background-color: #f7f9fc !important;
 }
-
-
-/* --- 2. HEADER / MENÚ DE NAVEGACIÓN (Versión 3.0) --- */
+/* --- 2. HEADER / MENÚ DE NAVEGACIÓN (Versión 4.0 - Marca como Link) --- */
 
 /* ---- ESTADO INICIAL (SOBRE EL HERO) ---- */
 
-#header-nav .navbar {
-    padding: 0.5rem 0;
-    transition: all 0.4s ease-in-out;
-}
-
-/* 2. El contenedor empieza con efecto de cristal */
+#header-nav .navbar { padding: 0.5rem 0; transition: all 0.4s ease-in-out; }
 #header-nav .navbar .container {
-    background: rgba(255, 255, 255, 0.1); /* Glass sutil */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    padding: 0.5rem 1rem;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* 1. El logo está oculto por defecto */
-#header-nav .navbar-logo-img {
-    height: 0;
-    opacity: 0;
-    margin-right: 0;
-    transition: all 0.4s ease-in-out;
-}
-
-/* El "by Latitud S.R.L" está oculto por defecto */
-#header-nav .navbar-brand-name {
-    display: none;
+    background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 50px; padding: 0.5rem 1rem; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Links de navegación */
 #header-nav .nav-link {
-    position: relative;
-    background: transparent; /* No tiene fondo de píldora */
-    box-shadow: none;
-    border-radius: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    padding: 0.5rem 1rem !important;
-    margin: 0 0.5rem;
-    text-decoration: none;
+    position: relative; background: transparent; box-shadow: none; border-radius: 60px;
+    display: flex; justify-content: center; align-items: center; transition: 0.5s;
+    padding: 0.5rem 1rem !important; margin: 0 0.2rem; text-decoration: none;
 }
-
-/* Capa de gradiente oculta */
-#header-nav .nav-link::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 60px;
+#header-nav .nav-link::before, #header-nav .nav-link::after {
+    content: ""; position: absolute; inset: 0; border-radius: 60px;
     background: linear-gradient(45deg, #982c53, #32694a);
-    opacity: 0;
-    transition: 0.5s;
+    opacity: 0; transition: 0.5s;
 }
-
-/* Sombra de brillo oculta */
-#header-nav .nav-link::after {
-    content: "";
-    position: absolute;
-    top: 10px;
-    width: 100%;
-    height: 100%;
-    border-radius: 60px;
-    background: linear-gradient(45deg, #982c53, #32694a);
-    transition: 0.5s;
-    filter: blur(15px);
-    z-index: -1;
-    opacity: 0;
-}
-
-/* Animación al pasar el cursor */
+#header-nav .nav-link::after { filter: blur(15px); z-index: -1; top: 10px; }
 #header-nav .nav-link:hover::before { opacity: 1; }
 #header-nav .nav-link:hover::after { opacity: 0.5; }
 
-/* Contenido del Link (Icono y Título) */
+/* Títulos de los links */
 #header-nav .nav-link-title {
-    color: #fff; /* Texto blanco sobre el hero */
-    font-size: 1rem;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
-    transition: 0.5s;
-    margin-left: 0.5rem;
-    position: relative; /* Para que esté sobre el gradiente */
-    z-index: 2;
+    color: #fff; font-size: 1rem; font-weight: 500; font-family: 'Poppins', sans-serif;
+    transition: 0.5s; margin-left: 0.5rem; position: relative; z-index: 2;
 }
+#header-nav .nav-link:hover .nav-link-title { color: #fff; }
 
-/* 4. Aseguramos que el texto sea siempre blanco, incluso con el hover */
-#header-nav .nav-link:hover .nav-link-title {
-    color: #fff;
-}
-
+/* Iconos de los links */
 #header-nav .nav-icon-wrapper ion-icon {
-    color: #fff;
-    font-size: 1.5em;
-    transition: 0.5s;
-    position: relative;
-    z-index: 2;
+    color: #fff; font-size: 1.5em; transition: 0.5s; position: relative; z-index: 2;
 }
 
+/* Estilo especial para el link de la marca */
+#header-nav .nav-brand-link .nav-link-title {
+    font-size: 1.5rem; /* Más grande */
+    font-weight: 700;   /* Más grueso */
+    margin-left: 0; /* No necesita margen */
+}
+
+/* Icono de Teléfono */
+#header-nav .nav-icon {
+    font-size: 1.5rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    transition: color 0.4s ease-in-out;
+    padding: 0.5rem;
+}
 
 /* ---- ESTADO AL HACER SCROLL (.scrolled) ---- */
 
-#header-nav.scrolled .navbar .container {
-    background: rgba(255, 255, 255, 0.85); /* Fondo blanco más sólido */
-}
-
-/* 1. El logo aparece al hacer scroll */
-#header-nav.scrolled .navbar-logo-img {
-    /* ACA PUEDES MODIFICAR EL ALTO */
-    height: 60px; /* Tamaño del logo más grande */
-    opacity: 1;
-    margin-right: 1rem;
-    border-radius: 0; /* Sin borde redondeado */
-}
-
-/* El "by Latitud S.R.L" aparece al hacer scroll */
-#header-nav.scrolled .navbar-brand-name {
-    display: block; /* Lo hacemos visible */
-    color: #260a30; /* Color oscuro */
-    text-shadow: none;
-}
-
-/* Los links con fondo de píldora ahora son transparentes */
-#header-nav.scrolled .nav-link {
-    background-color: transparent;
-    box-shadow: none;
-}
-/* Se desactiva el efecto de gradiente morado al hacer scroll */
-#header-nav.scrolled .nav-link::before,
-#header-nav.scrolled .nav-link::after {
-    display: none;
-}
-
-/* El texto de los links se vuelve oscuro */
-#header-nav.scrolled .nav-link-title {
-    color: #555;
-    text-shadow: none;
-}
-#header-nav.scrolled .nav-link:hover .nav-link-title {
-    color: #260a30 !important;
-}
-
-/* Los iconos se vuelven oscuros */
-#header-nav.scrolled .nav-icon-wrapper ion-icon {
-    color: #777;
-}
-#header-nav.scrolled .nav-link:hover .nav-icon-wrapper ion-icon {
-    color: #260a30;
-}
-
-/* Icono de contacto y hamburguesa */
-#header-nav .nav-icon { font-size: 1.5rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); transition: color 0.4s ease-in-out; }
+#header-nav.scrolled .navbar .container { background: rgba(255, 255, 255, 0.85); }
+#header-nav.scrolled .nav-link { background-color: transparent; box-shadow: none; }
+#header-nav.scrolled .nav-link::before, #header-nav.scrolled .nav-link::after { display: none; }
+#header-nav.scrolled .nav-link-title { color: #555; text-shadow: none; }
+#header-nav.scrolled .nav-link:hover { background-color: rgba(0, 0, 0, 0.05); }
+#header-nav.scrolled .nav-link:hover .nav-link-title { color: #260a30 !important; }
+#header-nav.scrolled .nav-icon-wrapper ion-icon { color: #777; }
+#header-nav.scrolled .nav-link:hover .nav-icon-wrapper ion-icon { color: #260a30; }
+#header-nav.scrolled .nav-brand-link .nav-link-title { color: #260a30; } /* La marca también cambia de color */
 #header-nav.scrolled .nav-icon { color: #260a30; text-shadow: none; }
-#header-nav .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
-#header-nav.scrolled .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 
-/* Ocultamos iconos en móvil */
+/* ---- RESPONSIVIDAD ---- */
+
+/* Ocultar el nombre de la marca en el centro en pantallas medianas para dar espacio */
+@media (max-width: 1200px) {
+    #header-nav .nav-brand-link { display: none; }
+    #header-nav .navbar-brand { /* Usamos el brand original para mostrarlo aquí */
+        display: block !important;
+        font-weight: 700; font-size: 1.5rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        transition: color 0.4s ease-in-out;
+        text-decoration: none;
+    }
+    #header-nav.scrolled .navbar-brand { color: #260a30; text-shadow: none; }
+}
+
 @media (max-width: 991px) {
     #header-nav .nav-icon-wrapper { display: none; }
     #header-nav .nav-link-title { margin-left: 0; }
-    #header-nav .navbar-collapse {
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        padding: 1rem;
-        margin-top: 0.5rem;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-    #header-nav .nav-link, #header-nav.scrolled .nav-link {
-        color: #555 !important;
-        text-shadow: none;
-    }
-    #header-nav .nav-link:hover, #header-nav.scrolled .nav-link:hover, #header-nav .nav-link.active {
-        color: #260a30 !important;
-        background-color: rgba(0, 0, 0, 0.05);
-    }
-    /* El logo siempre será visible en móvil para no dejar un hueco vacío */
-    #header-nav .navbar-logo-img { height: 2.5rem; opacity: 1; margin-right: 0.5rem; border-radius: 0; }
-    #header-nav .navbar-brand-name { display: block; color: #260a30; text-shadow: none; font-size: 1.2rem; }
+    #header-nav .navbar-collapse { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 1rem; margin-top: 0.5rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+    #header-nav .nav-link, #header-nav.scrolled .nav-link { color: #555 !important; text-shadow: none; }
+    #header-nav .nav-link:hover, #header-nav.scrolled .nav-link:hover, #header-nav .nav-link.active { color: #260a30 !important; background-color: rgba(0, 0, 0, 0.05); }
+    
+    #header-nav .nav-brand-link { display: list-item; } /* Volvemos a mostrar la marca dentro del menú desplegable */
+    #header-nav .navbar-brand { display: block !important; } /* Siempre visible en móvil */
+    #header-nav.scrolled .navbar-brand { font-size: 1.2rem; }
 }
-/* --- 3. SECCIÓN HERO Y SOBRE NOSOTROS (UNIFICADAS) --- */
 
+/* El toggler no necesita cambios */
+#header-nav .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+#header-nav.scrolled .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+
+/* --- 3. SECCIÓN HERO Y SOBRE NOSOTROS --- */
 .main-hero-parallax {
     min-height: 100vh;
-    padding-bottom: 80px; /* Espacio para que la tarjeta no se pegue abajo */
+    padding-bottom: 80px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
 }
 
+.hero-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 50%);
+}
+
 .jarallax-img {
-    /* Por defecto, centramos la imagen */
     object-position: center center;
 }
 
 .hero-content-wrapper {
-    flex-grow: 1; /* Permite que este contenedor ocupe el espacio disponible */
+    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     z-index: 2;
-    padding-top: 100px; /* Espacio para el menú */
+    padding-top: 100px;
 }
-.hero-title { font-size: 4rem; font-weight: 700; line-height: 1.2; }
-.hero-subtitle { font-size: 1.5rem; font-weight: 400; max-width: 800px; margin: 1rem auto 0;}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 1rem auto 0;
+}
 
 .about-us-content-wrapper {
-    margin-top: -200px; /* La superposición en escritorio */
+    margin-top: -200px;
     position: relative;
     z-index: 3;
     transition: margin-top 0.4s ease;
 }
+
 .about-us-card {
     background: rgba(255, 255, 255, 0.15);
     border-radius: 20px;
@@ -276,192 +195,182 @@ html {
     justify-content: center;
     align-items: center;
 }
+
 .pueblo-blanco-logo {
     max-width: 100%;
     height: auto;
-    filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.4));
+    filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.4));
 }
-
-
-/* ====================================================
-   REGLAS RESPONSIVAS PARA MANTENER EL EFECTO
-   ==================================================== */
 
 @media (max-width: 991px) {
     .main-hero-parallax {
-        /* 1. Hacemos el hero más corto en tablets y móviles */
-        min-height: 80vh; 
+        min-height: 80vh;
     }
 
     #main-hero-parallax .jarallax-img {
-        /* 3. Nos enfocamos en la parte de abajo de la imagen */
         object-position: bottom center;
     }
 
     .hero-title {
         font-size: 3rem;
     }
+
     .hero-subtitle {
         font-size: 1.2rem;
     }
 
     .about-us-content-wrapper {
-        /* 2. Reducimos la superposición para que no tape el texto */
         margin-top: -100px;
     }
 }
 
 @media (max-width: 575px) {
     .main-hero-parallax {
-        min-height: 70vh; /* Aún más corto en móviles pequeños */
+        min-height: 70vh;
     }
 
     .hero-content-wrapper {
-        padding-top: 80px; /* Menos espacio para el menú en móvil */
+        padding-top: 80px;
     }
-    
+
     .hero-title {
         font-size: 2.2rem;
     }
+
     .hero-subtitle {
         font-size: 1.1rem;
     }
 
     .about-us-content-wrapper {
-        margin-top: -80px; /* Superposición mínima */
+        margin-top: -80px;
     }
 
     .about-us-card {
-        padding: 1.5rem; /* Menos padding en la tarjeta de cristal */
+        padding: 1.5rem;
     }
 }
 
-/* --- 4. SECCIÓN CERTIFICACIONES --- */
-
-.certifications-section {
-    padding: 4rem 0;
-    background-color: #ffffff;
+/* --- 4. SECCIÓN ALCANCE GLOBAL (FUSIÓN) --- */
+.global-reach-section {
+    padding: 0;
+    background-color: #B0385C;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
-.certification-card {
-    background: transparent;
-    padding: 1rem;
-    height: 120px;
+
+.global-reach-section .row {
+    min-height: 600px;
+}
+
+.text-and-stats-column {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    transition: all 0.3s ease;
-}
-.certification-card img {
-    max-width: 100%;
-    max-height: 80px;
-    height: auto;
-    filter: grayscale(100%);
-    opacity: 0.6;
-    transition: all 0.3s ease;
-}
-.certification-card:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
-    transform: scale(1.1);
+    padding: 4rem;
 }
 
-
-/* --- 5. SECCIÓN CALIDAD (IMAGEN Y TEXTO) --- */
-
-.quality-section {
-    padding: 5rem 0;
-    background-color: #f8f9fa;
+.image-column {
+    padding: 0;
+    min-height: 400px;
+    display: flex; /* Añadido para controlar el padding de la imagen */
+    align-items: center; /* Añadido para centrar verticalmente si es necesario */
+    justify-content: center; /* Añadido para centrar horizontalmente si es necesario */
 }
-.quality-card {
-    position: relative;
-    display: flex;
-    align-items: center;
-    min-height: 500px;
-}
-.quality-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60%;
-    height: 100%;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-.quality-image img {
+.image-column img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-.quality-text-box {
-    position: relative;
-    z-index: 2;
-    margin-left: auto;
-    width: 55%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 3rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-.quality-text-box .section-title { font-size: 2.2rem; }
-
-@media (max-width: 991px) {
-    .quality-card { flex-direction: column; }
-    .quality-image, .quality-text-box { position: static; width: 100%; margin-left: 0; }
-    .quality-image { height: 300px; margin-bottom: -50px; }
-    .quality-text-box { padding: 2rem; }
+    /* --> 3. ESTILOS PARA LA IMAGEN GRANDE */
+    border-radius: 1rem; /* Borde redondeado más sutil */
+    box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.15); /* Sombra hacia la izquierda */
+    /* Añadimos un "padding" visual haciendo la imagen un poco más pequeña que su contenedor */
+    width: calc(100% - 2rem);
+    height: calc(100% - 4rem);
 }
 
-
-/* --- 6. SECCIÓN ESTADÍSTICAS (CONTADORES) --- */
-
-#estadisticas {
-    padding: 5rem 0;
-    background-color: #f1f2f3;
-}
-#estadisticas .feature-card {
-    padding: 2rem;
-    border: 1px solid transparent;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    background-color: #ffffff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-#estadisticas .feature-card:hover {
-    border-color: #ddd;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transform: translateY(-5px);
-}
-#estadisticas .stat-number { font-size: 3.5rem; font-weight: 700; color: #32694a; }
-#estadisticas .stat-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-    position: relative;
-    display: inline-block;
-}
-#estadisticas .stat-title::after {
-    content: '';
-    position: absolute;
+.text-and-stats-column .content-wrapper {
+    max-width: 500px;
     width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, #b2df8a, #32694a);
-    bottom: -8px;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    margin: 0 auto;
 }
-#estadisticas .feature-card:hover .stat-title::after {
-    transform: scaleX(1);
-}
-#estadisticas .stat-text { color: #555; }
 
+.text-and-stats-column .section-kicker {
+    font-size: 0.9rem;
+    color: #79c548;
+    margin-bottom: 0.5rem;
+}
+
+.text-and-stats-column .section-title {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    text-align: left !important;
+}
+
+.text-and-stats-column p {
+    color: white;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+}
+
+.stats-carousel-container.swiper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.stat-carousel-item {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    height: 100%;
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: #B0385C;
+    margin-right: 2%;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1;
+}
+
+.stat-title {
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 0.2rem;
+    font-weight: 400;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 991px) {
+    .global-reach-section .row {
+        flex-direction: column-reverse;
+    }
+    .text-and-stats-column {
+        padding: 3rem;
+    }
+    .image-column img {
+        width: 100%;
+        height: 400px; /* Altura fija en tablet */
+        border-radius: 1rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .text-and-stats-column {
+        padding: 2rem;
+    }
+    .text-and-stats-column .section-title {
+        font-size: 2rem;
+    }
+}
 
 /* --- 7. SECCIÓN MAPA Y UBICACIÓN - "DE SAN JUAN AL MUNDO" (Refinado con Sombra de Color) --- */
 
@@ -508,7 +417,8 @@ html {
     height: 100%;
     object-fit: cover;
     object-position: center center;
-    transition: transform 0.6s ease; /* Sincronizamos la transición */
+    transition: transform 0.6s ease;
+    /* Sincronizamos la transición */
 }
 
 /* ESTADO INICIAL DE LAS CAPAS */
@@ -527,17 +437,21 @@ html {
 
 /* EFECTO HOVER */
 .interactive-map-container:hover .map-world {
-    transform: scale(1.05) translateY(-10px); /* Un poco más sutil que antes */
+    transform: scale(1.05) translateY(-10px);
+    /* Un poco más sutil que antes */
     opacity: 0;
     /* SOMBRA DE COLOR VERDE AL DESAPARECER */
-    box-shadow: 0 25px 50px rgba(50, 105, 74, 0.3); /* Sombra con tu color #32694a */
+    box-shadow: 0 25px 50px rgba(50, 105, 74, 0.3);
+    /* Sombra con tu color #32694a */
 }
 
 .interactive-map-container:hover .map-argentina {
-    transform: scale(1.05) translateY(-10px); /* Crece y se eleva */
+    transform: scale(1.05) translateY(-10px);
+    /* Crece y se eleva */
     opacity: 1;
     /* SOMBRA DE COLOR MAGENTA AL APARECER */
-    box-shadow: 0 25px 50px rgba(152, 44, 83, 0.3); /* Sombra con tu color #982c53 */
+    box-shadow: 0 25px 50px rgba(152, 44, 83, 0.3);
+    /* Sombra con tu color #982c53 */
 }
 
 /* La imagen también reacciona de forma más sutil */
@@ -571,6 +485,99 @@ html {
     opacity: 1;
     transition-delay: 0.3s;
 }
+
+/* --- NUEVA SECCIÓN: PROCESO DE PRODUCCIÓN (VERSIÓN AMPLIADA) --- */
+
+.process-section-v2 {
+    padding: 6rem 0;
+    background-color: #ffffff;
+    overflow-x: hidden; /* Evita que las animaciones AOS se desborden */
+}
+
+.process-step {
+    margin-bottom: 6rem; /* Gran espacio entre cada etapa */
+}
+.process-step:last-child {
+    margin-bottom: 0;
+}
+
+.process-image {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+.process-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.process-text {
+    position: relative;
+    padding: 0 2rem;
+}
+
+/* El número grande y estilizado de cada etapa */
+.step-number {
+    font-size: 6rem;
+    font-weight: 800;
+    color: #f0f2f5; /* Un gris muy claro que actúa como marca de agua */
+    position: absolute;
+    top: -2.5rem;
+    left: 0;
+    z-index: 1;
+    line-height: 1;
+}
+
+/* Ajuste para los textos alineados a la derecha */
+.process-text.text-lg-end .step-number {
+    left: auto;
+    right: 0;
+}
+
+.process-text h3 {
+    position: relative;
+    z-index: 2; /* Se asegura de estar sobre el número */
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+}
+
+.process-text p {
+    position: relative;
+    z-index: 2;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 991px) {
+    .process-step {
+        margin-bottom: 4rem;
+        text-align: center; /* Centramos todo en móvil */
+    }
+    .process-image {
+        margin-bottom: 2rem;
+    }
+    .process-text {
+        padding: 0;
+    }
+    .process-text.text-lg-end {
+        text-align: center !important; /* Forzamos el centrado */
+    }
+    .step-number {
+        font-size: 4rem;
+        top: -1.5rem;
+        left: 50%; /* Centramos el número */
+        transform: translateX(-50%);
+    }
+    .process-text h3 {
+        font-size: 1.8rem;
+    }
+}
+
 
 /* ==========================================================================
    ESTILOS ESPECÍFICOS PARA SECCIONES DE TARJETAS
@@ -645,7 +652,8 @@ html {
 
 .attributes-section {
     padding: 5rem 0;
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff;
+    /* Fondo blanco */
 }
 
 .attributes-section .section-title,
@@ -664,7 +672,8 @@ html {
 }
 
 /* Fondo de color inclinado (invisible por defecto) */
-.attribute-box::before, .attribute-box::after {
+.attribute-box::before,
+.attribute-box::after {
     content: '';
     position: absolute;
     top: 0;
@@ -707,9 +716,11 @@ html {
     text-align: center;
     color: #555;
 }
+
 .attribute-box:hover .attribute-content {
     transform: translateY(-20px);
 }
+
 .attribute-content img {
     width: 100%;
     height: 150px;
@@ -717,8 +728,19 @@ html {
     border-radius: 8px;
     margin-bottom: 1rem;
 }
-.attribute-content h2 { font-size: 1.8rem; color: #1a1a1a; margin-bottom: 10px; }
-.attribute-content p { font-size: 1rem; margin-bottom: 1rem; line-height: 1.6; }
+
+.attribute-content h2 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.attribute-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
 .attribute-content a {
     display: inline-block;
     font-size: 1rem;
@@ -731,15 +753,24 @@ html {
     margin-top: 5px;
     transition: 0.3s ease;
 }
+
 .attribute-content a:hover {
     background: #5c810d;
 }
 
 /* Brillos flotantes */
 @keyframes animate-glow {
-    0%, 100% { transform: translateY(10px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(10px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
+
 .attribute-box span::before,
 .attribute-box span::after {
     content: '';
@@ -751,21 +782,36 @@ html {
     opacity: 0;
     transition: 0.5s;
     animation: animate-glow 4s ease-in-out infinite;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
-.attribute-box:hover span::before { top: -40px; left: 40px; width: 80px; height: 80px; opacity: 1; }
-.attribute-box:hover span::after { bottom: -40px; right: 40px; width: 80px; height: 80px; opacity: 1; animation-delay: -2s; }
+
+.attribute-box:hover span::before {
+    top: -40px;
+    left: 40px;
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+}
+
+.attribute-box:hover span::after {
+    bottom: -40px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+    animation-delay: -2s;
+}
 
 
-/* --- 10. SECCIÓN VARIEDADES DE PASAS (Efecto Cuadrado Moderno) --- */
+/* --- 10. SECCIÓN VARIEDADES DE PASAS (Estilo "Ficha Técnica") --- */
 
 #variedades {
-    background-color: #ffffff;
+    background-color: #f9fcf7;
     padding: 5rem 0;
 }
 
 #variedades .section-title {
-    color: #1a1a1a;
+    color: #853449;
 }
 
 .variety-card {
@@ -773,76 +819,83 @@ html {
     overflow: hidden;
     cursor: pointer;
     border-radius: 16px;
-    aspect-ratio: 1 / 1;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    
+    /* Ya no es cuadrada, es una tarjeta rectangular alta */
+    height: 100%; 
+    min-height: 480px; /* Asegura una altura mínima consistente */
+    
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    border: 2px solid var(--border-color);
+    
+    /* El borde ahora es una línea superior de color */
+    border-top: 5px solid var(--card-color);
 }
 
 .variety-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-.variety-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.variety-card:hover img {
-    transform: scale(1.1);
-}
-
+/* El reflejo de cristal se mantiene, pero lo ajustamos */
 .variety-card::after {
     content: '';
     position: absolute;
     top: 0;
     left: -150%;
-    width: 70%;
+    width: 50%; /* Más estrecho para un reflejo más rápido */
     height: 100%;
-    background: linear-gradient( to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0) 100% );
+    background: linear-gradient( to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100% );
     transform: skewX(-25deg);
-    transition: left 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: left 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .variety-card:hover::after {
     left: 150%;
 }
 
-.variety-name {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 1.5rem;
-    background-color: var(--border-color);
-    color: #ffffff;
-    padding: 0.5rem 1.2rem;
-    border-radius: 8px;
-    font-size: 1.4rem;
+
+/* Estructura interna de la tarjeta */
+.card-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.variety-title {
+    font-size: 1.8rem;
     font-weight: 700;
-    display: inline-block;
-    width: auto;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: all 0.4s ease;
+    color: var(--card-color); /* El título toma el color de la tarjeta */
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-.variety-card:hover .variety-name {
-    filter: brightness(1.1);
+.variety-image {
+    width: 100%;
+    height: 200px; /* Altura fija para la imagen */
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
 }
 
-/* REGLAS RESPONSIVAS PARA MÓVILES */
-@media (max-width: 767px) {
-    #variedades {
-        padding: 3rem 0;
-    }
-    
-    .variety-name {
-        font-size: 1rem;
-        padding: 0.4rem 0.8rem;
-        bottom: 1rem;
-        left: 1rem;
-    }
+.variety-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.variety-card:hover .variety-image img {
+    transform: scale(1.1);
+}
+
+.variety-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    text-align: center;
+    flex-grow: 1; /* Empuja el botón (si lo hubiera) hacia abajo */
 }
 
 /* --- 11. SECCIÓN FAQ (PREGUNTAS FRECUENTES) --- */
@@ -850,21 +903,25 @@ html {
 .faq-section {
     padding: 5rem 0;
 }
+
 .accordion-item {
     background-color: #fff;
     border: 1px solid #eee;
     margin-bottom: 1rem;
     border-radius: 8px !important;
 }
+
 .accordion-button {
     font-weight: 700;
     color: #1a1a1a;
 }
+
 .accordion-button:not(.collapsed) {
     color: #1a1a1a;
     background-color: #f7f9fc;
-    box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
 }
+
 .accordion-button:focus {
     box-shadow: 0 0 0 0.25rem rgba(121, 197, 72, 0.25);
 }
@@ -890,18 +947,21 @@ html {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
 }
 
-.contact-form-card h4, .contact-info-card h4 {
+.contact-form-card h4,
+.contact-info-card h4 {
     font-weight: 700;
     color: #982c53;
 }
 
-.contact-form-card .form-control, .contact-form-card .form-select {
+.contact-form-card .form-control,
+.contact-form-card .form-select {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 8px;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.contact-form-card .form-control:focus, .contact-form-card .form-select:focus {
+.contact-form-card .form-control:focus,
+.contact-form-card .form-select:focus {
     background-color: #fff;
     border-color: #32694a;
     box-shadow: 0 0 0 0.25rem rgba(121, 197, 72, 0.25);
@@ -926,7 +986,8 @@ html {
 
 /* Tarjeta de información de contacto */
 .contact-info-card {
-    background-color: #982c53; /* Fondo oscuro para contraste */
+    background-color: #982c53;
+    /* Fondo oscuro para contraste */
     color: #f0f0f0;
     padding: 2.5rem;
     border-radius: 16px;
@@ -956,7 +1017,8 @@ html {
     text-transform: uppercase;
 }
 
-.contact-info-item .text a, .contact-info-item .text p {
+.contact-info-item .text a,
+.contact-info-item .text p {
     font-size: 1.1rem;
     font-weight: 600;
     color: #fff;
@@ -983,20 +1045,26 @@ html {
     color: #F8F8FA;
     padding-top: 4rem;
 }
+
 .footer-title {
     color: #F8F8FA;
     margin-bottom: 1.5rem;
     font-weight: 700;
 }
-.footer-section p, .footer-section h6 {
+
+.footer-section p,
+.footer-section h6 {
     color: #F8F8FA;
 }
+
 .footer-section h6 {
     font-size: 1.1rem;
 }
+
 .footer-section i {
     color: #BDBDBD;
 }
+
 .footer-social a {
     display: inline-flex;
     align-items: center;
@@ -1010,10 +1078,12 @@ html {
     text-decoration: none;
     transition: all 0.3s ease;
 }
+
 .footer-social a:hover {
     background-color: #bdbdbd65;
     color: #fff;
 }
+
 .footer-link {
     display: block;
     color: #F8F8FA;
@@ -1021,25 +1091,30 @@ html {
     margin-bottom: 0.5rem;
     transition: all 0.3s ease;
 }
+
 .footer-link::before {
     content: '\F285';
     font-family: 'bootstrap-icons';
     margin-right: 0.5rem;
     color: #BDBDBD;
 }
+
 .footer-link:hover {
     color: #fff;
     padding-left: 5px;
 }
+
 .footer-section .form-control {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
     border-radius: 8px 0 0 8px;
 }
+
 .footer-section .form-control::placeholder {
     color: #F8F8FA;
 }
+
 .btn-subscribe {
     background-color: #32694a;
     color: #fff;
@@ -1050,11 +1125,13 @@ html {
     top: 0;
     right: 0;
 }
+
 .copyright-bar {
     background-color: #982c53;
     padding: 1rem 0;
     font-size: 0.9rem;
 }
+
 .copyright-bar a {
     color: #BDBDBD;
     text-decoration: none;
@@ -1064,4 +1141,30 @@ html {
 .copyright-bar a:hover {
     color: #fff;
     padding-left: 5px;
+}
+
+/* --- SWIPER CUSTOM STYLES --- */
+.stats-carousel-container .swiper-button-next,
+.stats-carousel-container .swiper-button-prev {
+    color: #79c548;
+    /* Use a color from the palette */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.stats-carousel-container .swiper-button-next:after,
+.stats-carousel-container .swiper-button-prev:after {
+    font-size: 1.5rem;
+    /* Adjust size */
+    font-weight: 700;
+}
+
+.stats-carousel-container .swiper-pagination-bullet {
+    background-color: #79c548;
+    width: 10px;
+    height: 10px;
+}
+
+.stats-carousel-container .swiper-pagination-bullet-active {
+    background-color: #982c53;
 }
