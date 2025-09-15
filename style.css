@@ -39,85 +39,107 @@ html {
 .bg-light {
     background-color: #f7f9fc !important;
 }
-/* --- 2. HEADER / MENÚ DE NAVEGACIÓN (Versión 4.0 - Marca como Link) --- */
 
-/* ---- ESTADO INICIAL (SOBRE EL HERO) ---- */
+/* --- 2. HEADER / MENÚ DE NAVEGACIÓN (Versión 6.0 - Logo Único) --- */
 
-#header-nav .navbar { padding: 0.5rem 0; transition: all 0.4s ease-in-out; }
-#header-nav .navbar .container {
-    background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 50px; padding: 0.5rem 1rem; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+/* ---- ESTADO INICIAL Y CON SCROLL UNIFICADO ---- */
+
+#header-nav .navbar {
+    padding: 0.5rem 0;
+    transition: all 0.4s ease-in-out;
 }
 
-/* Links de navegación */
+#header-nav .navbar .container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#header-nav.scrolled .navbar .container {
+    background: rgba(255, 255, 255, 0.85); /* Se vuelve más opaco al hacer scroll */
+}
+
+/* ---- LÓGICA DE LA MARCA (SOLO LOGO) ---- */
+#header-nav .navbar-brand {
+    padding: 0; /* Quitamos padding extra */
+}
+.brand-logo-img {
+    height: 45px; /* Tamaño del logo en escritorio */
+    width: auto;
+    transition: all 0.4s ease;
+}
+#header-nav.scrolled .brand-logo-img {
+    height: 50px; /* Se agranda un poco al hacer scroll */
+}
+
+/* ---- LINKS DE NAVEGACIÓN ---- */
 #header-nav .nav-link {
-    position: relative; background: transparent; box-shadow: none; border-radius: 60px;
-    display: flex; justify-content: center; align-items: center; transition: 0.5s;
-    padding: 0.5rem 1rem !important; margin: 0 0.2rem; text-decoration: none;
+    position: relative;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.2rem;
+    text-decoration: none;
 }
 #header-nav .nav-link::before, #header-nav .nav-link::after {
-    content: ""; position: absolute; inset: 0; border-radius: 60px;
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 60px;
     background: linear-gradient(45deg, #982c53, #32694a);
-    opacity: 0; transition: 0.5s;
+    opacity: 0;
+    transition: 0.5s;
 }
 #header-nav .nav-link::after { filter: blur(15px); z-index: -1; top: 10px; }
 #header-nav .nav-link:hover::before { opacity: 1; }
 #header-nav .nav-link:hover::after { opacity: 0.5; }
-
-/* Títulos de los links */
 #header-nav .nav-link-title {
-    color: #fff; font-size: 1rem; font-weight: 500; font-family: 'Poppins', sans-serif;
-    transition: 0.5s; margin-left: 0.5rem; position: relative; z-index: 2;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.5s;
+    margin-left: 0.5rem;
+    position: relative;
+    z-index: 2;
 }
 #header-nav .nav-link:hover .nav-link-title { color: #fff; }
-
-/* Iconos de los links */
 #header-nav .nav-icon-wrapper ion-icon {
-    color: #fff; font-size: 1.5em; transition: 0.5s; position: relative; z-index: 2;
+    color: #fff;
+    font-size: 1.5em;
+    transition: color 0.5s;
+    position: relative;
+    z-index: 2;
 }
 
-/* Estilo especial para el link de la marca */
-#header-nav .nav-brand-link .nav-link-title {
-    font-size: 1.5rem; /* Más grande */
-    font-weight: 700;   /* Más grueso */
-    margin-left: 0; /* No necesita margen */
-}
-
-/* Icono de Teléfono */
-#header-nav .nav-icon {
-    font-size: 1.5rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    transition: color 0.4s ease-in-out;
-    padding: 0.5rem;
-}
-
-/* ---- ESTADO AL HACER SCROLL (.scrolled) ---- */
-
-#header-nav.scrolled .navbar .container { background: rgba(255, 255, 255, 0.85); }
-#header-nav.scrolled .nav-link { background-color: transparent; box-shadow: none; }
-#header-nav.scrolled .nav-link::before, #header-nav.scrolled .nav-link::after { display: none; }
-#header-nav.scrolled .nav-link-title { color: #555; text-shadow: none; }
+/* ---- ESTILOS DE LINKS AL HACER SCROLL ---- */
+#header-nav.scrolled .nav-link-title { color: #555; }
+#header-nav.scrolled .nav-icon-wrapper ion-icon { color: #777; }
 #header-nav.scrolled .nav-link:hover { background-color: rgba(0, 0, 0, 0.05); }
 #header-nav.scrolled .nav-link:hover .nav-link-title { color: #260a30 !important; }
-#header-nav.scrolled .nav-icon-wrapper ion-icon { color: #777; }
 #header-nav.scrolled .nav-link:hover .nav-icon-wrapper ion-icon { color: #260a30; }
-#header-nav.scrolled .nav-brand-link .nav-link-title { color: #260a30; } /* La marca también cambia de color */
-#header-nav.scrolled .nav-icon { color: #260a30; text-shadow: none; }
+#header-nav.scrolled .nav-link::before, #header-nav.scrolled .nav-link::after { display: none; } /* Desactivamos el efecto de color al hacer scroll */
+
+/* ---- ICONO DE CONTACTO Y HAMBURGUESA ---- */
+#header-nav .navbar-contact .nav-icon {
+    font-size: 1.5rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    transition: color 0.4s ease-in-out; padding: 0.5rem; text-decoration: none;
+}
+#header-nav.scrolled .navbar-contact .nav-icon { color: #260a30; text-shadow: none; }
+#header-nav .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+#header-nav.scrolled .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 
 /* ---- RESPONSIVIDAD ---- */
-
-/* Ocultar el nombre de la marca en el centro en pantallas medianas para dar espacio */
-@media (max-width: 1200px) {
-    #header-nav .nav-brand-link { display: none; }
-    #header-nav .navbar-brand { /* Usamos el brand original para mostrarlo aquí */
-        display: block !important;
-        font-weight: 700; font-size: 1.5rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        transition: color 0.4s ease-in-out;
-        text-decoration: none;
-    }
-    #header-nav.scrolled .navbar-brand { color: #260a30; text-shadow: none; }
-}
-
 @media (max-width: 991px) {
     #header-nav .nav-icon-wrapper { display: none; }
     #header-nav .nav-link-title { margin-left: 0; }
@@ -125,14 +147,10 @@ html {
     #header-nav .nav-link, #header-nav.scrolled .nav-link { color: #555 !important; text-shadow: none; }
     #header-nav .nav-link:hover, #header-nav.scrolled .nav-link:hover, #header-nav .nav-link.active { color: #260a30 !important; background-color: rgba(0, 0, 0, 0.05); }
     
-    #header-nav .nav-brand-link { display: list-item; } /* Volvemos a mostrar la marca dentro del menú desplegable */
-    #header-nav .navbar-brand { display: block !important; } /* Siempre visible en móvil */
-    #header-nav.scrolled .navbar-brand { font-size: 1.2rem; }
+    .brand-logo-img, #header-nav.scrolled .brand-logo-img {
+        height: 35px; /* Un solo tamaño de logo para móvil, siempre visible */
+    }
 }
-
-/* El toggler no necesita cambios */
-#header-nav .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
-#header-nav.scrolled .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 
 /* --- 3. SECCIÓN HERO Y SOBRE NOSOTROS --- */
 .main-hero-parallax {
@@ -197,7 +215,7 @@ html {
 }
 
 .pueblo-blanco-logo {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.4));
 }
@@ -372,118 +390,62 @@ html {
     }
 }
 
-/* --- 7. SECCIÓN MAPA Y UBICACIÓN - "DE SAN JUAN AL MUNDO" (Refinado con Sombra de Color) --- */
+/* --- 7. SECCIÓN MAPA Y UBICACIÓN - "LIENZO ANIMADO" --- */
 
 .location-section-v2 {
     padding: 6rem 0;
-    background-color: #f7f9fc;
+    background-color:  #982c53;
     overflow: hidden;
 }
 
+/* El texto ahora debe ser claro para contrastar */
+.location-section-v2 .section-title,
 .location-section-v2 .text-content p.lead {
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: #333;
-    margin-bottom: 1rem;
+    color: #ffffff;
 }
 
 .location-section-v2 .text-content p {
+    color: #cccccc;
     font-size: 1.1rem;
-    color: #555;
     line-height: 1.7;
 }
 
-.interactive-map-container {
+/* El contenedor de la animación (nuestro lienzo) */
+.animated-map-container {
     position: relative;
-    aspect-ratio: 16 / 10;
-    cursor: pointer;
-}
-
-.map-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
     border-radius: 16px;
-    overflow: hidden;
-    /* SOMBRA INICIAL: Sutil y neutra */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem; /* Espacio para que la sombra respire */
+
+    /* EL FONDO ANIMADO */
+    background: linear-gradient(135deg, #982c53, #32694a, #982c53);
+    background-size: 400% 400%; /* El fondo es 4 veces más grande para poder moverse */
+    animation: gradient-flow 15s ease-in-out infinite;
 }
 
-.map-layer img {
+/* La animación que mueve el fondo del gradiente */
+@keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* La imagen PNG transparente */
+.animated-map-container img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    transition: transform 0.6s ease;
-    /* Sincronizamos la transición */
+    height: auto;
+    position: relative; /* Para que esté sobre el fondo */
+    z-index: 2;
+    
+    /* Sombra para dar efecto de profundidad */
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+    
+    transition: all 0.4s ease;
 }
 
-/* ESTADO INICIAL DE LAS CAPAS */
-.map-world {
-    z-index: 10;
-    transform: scale(1);
-    opacity: 1;
-}
-
-.map-argentina {
-    z-index: 9;
-    transform: scale(0.8);
-    opacity: 0;
-}
-
-
-/* EFECTO HOVER */
-.interactive-map-container:hover .map-world {
-    transform: scale(1.05) translateY(-10px);
-    /* Un poco más sutil que antes */
-    opacity: 0;
-    /* SOMBRA DE COLOR VERDE AL DESAPARECER */
-    box-shadow: 0 25px 50px rgba(50, 105, 74, 0.3);
-    /* Sombra con tu color #32694a */
-}
-
-.interactive-map-container:hover .map-argentina {
-    transform: scale(1.05) translateY(-10px);
-    /* Crece y se eleva */
-    opacity: 1;
-    /* SOMBRA DE COLOR MAGENTA AL APARECER */
-    box-shadow: 0 25px 50px rgba(152, 44, 83, 0.3);
-    /* Sombra con tu color #982c53 */
-}
-
-/* La imagen también reacciona de forma más sutil */
-.interactive-map-container:hover .map-layer img {
-    transform: scale(1.1);
-}
-
-
-/* ETIQUETAS DE TEXTO SOBRE LOS MAPAS (sin cambios) */
-.map-label {
-    position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    background-color: rgba(18, 18, 18, 0.7);
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: opacity 0.4s ease;
-}
-
-.map-argentina .map-label {
-    opacity: 0;
-}
-
-.interactive-map-container:hover .map-argentina .map-label {
-    opacity: 1;
-    transition-delay: 0.3s;
+/* Efecto al pasar el cursor */
+.animated-map-container:hover img {
+    transform: scale(1.05); /* Se agranda sutilmente */
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6)); /* La sombra se intensifica */
 }
 
 /* --- NUEVA SECCIÓN: PROCESO DE PRODUCCIÓN (VERSIÓN AMPLIADA) --- */
@@ -1077,6 +1039,13 @@ html {
     margin-right: 0.5rem;
     text-decoration: none;
     transition: all 0.3s ease;
+}
+.logonav {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    background-color: #fff;
+
 }
 
 .footer-social a:hover {

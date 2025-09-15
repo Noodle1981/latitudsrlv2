@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap" rel="stylesheet">
@@ -20,39 +21,38 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-<!-- =================================================================
+    <!-- =================================================================
 HEADER / MENÚ DE NAVEGACIÓN
+================================================================== -->
+<!-- =================================================================
+HEADER / MENÚ DE NAVEGACIÓN - VERSIÓN FINAL SIMPLIFICADA
 ================================================================== -->
 <header id="header-nav">
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <!-- La sección .navbar-brand ahora está vacía, pero la dejamos por estructura de Bootstrap -->
-            <a class="navbar-brand" href="#main-hero-parallax"></a>
+            <!-- Marca a la izquierda (con logo y texto) -->
+           <!-- Marca a la izquierda (solo logo) -->
+<a class="navbar-brand" href="#main-hero-parallax">
+    <img src="./assets/images/logolatitud.png" alt="Latitud S.R.L Logo" class="brand-logo-img">
+</a>
 
-            <!-- Botón Hamburguesa para Móviles -->
+            <!-- Botón Hamburguesa -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Contenido Colapsable del Menú -->
+            <!-- Menú Colapsable -->
             <div class="collapse navbar-collapse" id="mainNav">
-                <!-- Links de Navegación Actualizados -->
-                <ul class="navbar-nav w-100 d-flex justify-content-between align-items-center">
-                    
-                    <!-- NUEVO LINK: Latitud S.R.L -->
-                    <li class="nav-item">
-                        <a class="nav-link nav-brand-link" href="#main-hero-parallax">
-                            <span class="nav-link-title">Latitud S.R.L</span>
-                        </a>
-                    </li>
-                    
-                    <!-- Links del Menú -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="#main-hero-parallax">
                             <span class="nav-icon-wrapper"><ion-icon name="home-outline"></ion-icon></span>
@@ -77,188 +77,199 @@ HEADER / MENÚ DE NAVEGACIÓN
                             <span class="nav-link-title">Sobre Nosotros</span>
                         </a>
                     </li>
-
-                    <!-- Icono de Contacto -->
-                    <li class="nav-item">
-                        <a class="nav-icon" href="tel:+123456789">
-                            <i class="bi bi-telephone"></i>
-                        </a>
-                    </li>
                 </ul>
+
+                <div class="navbar-contact">
+                    <a class="nav-icon" href="tel:+123456789">
+                        <i class="bi bi-telephone"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 </header>
-<!-- =================================================================
+    <!-- =================================================================
 SECCIÓN HERO Y SOBRE NOSOTROS (UNIFICADAS) - VERSIÓN LOGO MINIMALISTA
 ================================================================== -->
-<section id="main-hero-parallax" class="main-hero-parallax jarallax">
-    <!-- Imagen de fondo del Hero -->
-    <img class="jarallax-img" src="./assets/images/herodefinitivo.png" alt="Viñedos de San Juan">
-    
-    <!-- Capa de superposición para dar un poco de contraste -->
-    <div class="hero-overlay"></div>
+    <section id="main-hero-parallax" class="main-hero-parallax jarallax">
+        <!-- Imagen de fondo del Hero -->
+        <img class="jarallax-img" src="./assets/images/herodefinitivo.png" alt="Viñedos de San Juan">
 
-    <!-- Contenedor para la tarjeta "Sobre Nosotros" que se monta encima -->
-    <div id="nosotros" class="about-us-content-wrapper">
-        <div class="container">
-            <div class="row justify-content-center">
-                <!-- La columna ahora puede ser más estrecha para enfocar en el logo -->
-                <div class="col-12 col-md-10 col-lg-8"> 
-                    <div class="about-us-card glass-card">
-                        <!-- El único contenido de la tarjeta es el logo -->
-                        <img src="./assets/images/logo_sin fodo.png" class="pueblo-blanco-logo" alt="Logo Pueblo Blanco Pasas de Uva">
+        <!-- Capa de superposición para dar un poco de contraste -->
+        <div class="hero-overlay"></div>
+
+        <!-- Contenedor para la tarjeta "Sobre Nosotros" que se monta encima -->
+        <div id="nosotros" class="about-us-content-wrapper">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- La columna ahora puede ser más estrecha para enfocar en el logo -->
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <div class="about-us-card glass-card">
+                            <!-- El único contenido de la tarjeta es el logo -->
+                            <img src="./assets/images/logopuebloblanco.png" class="pueblo-blanco-logo"
+                                alt="Logo Pueblo Blanco Pasas de Uva">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- =================================================================
+    </section>
+    <!-- =================================================================
 SECCIÓN ALCANCE GLOBAL (FUSIÓN DE CALIDAD + ESTADÍSTICAS)
 ================================================================== -->
-<section id="alcance-global" class="global-reach-section">
-    <!-- NO hay container aquí. El row es el hijo directo. -->
-    <div class="row g-0">
-        <!-- Columna Izquierda: Texto y Estadísticas -->
-        <div class="col-lg-6 text-and-stats-column">
-            <div class="content-wrapper">
-                <span class="section-kicker">Productos disponibles todo el año</span>
-                <h2 class="section-title text-start">Alcance Global & Posición Estratégica</h2>
-                <p>Desde nuestro origen en San Juan, Argentina, tenemos un alcance global con acceso a los océanos Atlántico y Pacífico para llegar de forma directa a los distintos mercados, asegurando una producción constante durante todo el año.</p>
-                
-                <!-- Carrusel de Estadísticas -->
-                <div class="stats-carousel-container swiper">
-                    <div class="swiper-wrapper">
-                        <!-- Estadística 1 -->
-                        <div class="swiper-slide">
-                            <div class="stat-carousel-item">
-                                <div class="stat-icon"><i class="bi bi-globe-americas"></i></div>
-                                <div class="stat-content">
-                                    <div class="stat-number" data-count="15">0</div>
-                                    <h3 class="stat-title">Países</h3>
+    <section id="alcance-global" class="global-reach-section">
+        <!-- NO hay container aquí. El row es el hijo directo. -->
+        <div class="row g-0">
+            <!-- Columna Izquierda: Texto y Estadísticas -->
+            <div class="col-lg-6 text-and-stats-column">
+                <div class="content-wrapper">
+                    <span class="section-kicker">Productos disponibles todo el año</span>
+                    <h2 class="section-title text-start">Alcance Global & Posición Estratégica</h2>
+                    <p>Desde nuestro origen en San Juan, Argentina, tenemos un alcance global con acceso a los océanos
+                        Atlántico y Pacífico para llegar de forma directa a los distintos mercados, asegurando una
+                        producción constante durante todo el año.</p>
+
+                    <!-- Carrusel de Estadísticas -->
+                    <div class="stats-carousel-container swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Estadística 1 -->
+                            <div class="swiper-slide">
+                                <div class="stat-carousel-item">
+                                    <div class="stat-icon"><i class="bi bi-globe-americas"></i></div>
+                                    <div class="stat-content">
+                                        <div class="stat-number" data-count="15">0</div>
+                                        <h3 class="stat-title">Países</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Estadística 2 -->
+                            <div class="swiper-slide">
+                                <div class="stat-carousel-item">
+                                    <div class="stat-icon"><i class="bi bi-bricks"></i></div>
+                                    <div class="stat-content">
+                                        <div class="stat-number" data-count="125">0</div>
+                                        <h3 class="stat-title">Hectáreas</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Estadística 3 -->
+                            <div class="swiper-slide">
+                                <div class="stat-carousel-item">
+                                    <div class="stat-icon"><i class="bi bi-box-seam"></i></div>
+                                    <div class="stat-content">
+                                        <div class="stat-number" data-count="150">0</div>
+                                        <h3 class="stat-title">Toneladas</h3>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Estadística 2 -->
-                        <div class="swiper-slide">
-                            <div class="stat-carousel-item">
-                                <div class="stat-icon"><i class="bi bi-bricks"></i></div>
-                                <div class="stat-content">
-                                    <div class="stat-number" data-count="125">0</div>
-                                    <h3 class="stat-title">Hectáreas</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Estadística 3 -->
-                        <div class="swiper-slide">
-                            <div class="stat-carousel-item">
-                                <div class="stat-icon"><i class="bi bi-box-seam"></i></div>
-                                <div class="stat-content">
-                                    <div class="stat-number" data-count="150">0</div>
-                                    <h3 class="stat-title">Toneladas</h3>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
+
+            <!-- Columna Derecha: Imagen -->
+            <div class="col-lg-6 image-column">
+                <img src="./assets/images/Exportacion-de-pasas-1-1-1024x682.jpeg"
+                    alt="Proceso de calidad y exportación">
+            </div>
         </div>
-
-        <!-- Columna Derecha: Imagen -->
-        <div class="col-lg-6 image-column">
-            <img src="./assets/images/Exportacion-de-pasas-1-1-1024x682.jpeg" alt="Proceso de calidad y exportación">
-        </div>
-    </div>
-</section>
+    </section>
 
 
 
-<!-- =================================================================
+    <!-- =================================================================
 SECCIÓN PROCESO DE PRODUCCIÓN - VERSIÓN AMPLIADA
 ================================================================== -->
-<section id="procesos" class="process-section-v2">
-    <div class="container">
-        <!-- Título General de la Sección -->
-        <div class="row justify-content-center">
-            <div class="col-12 text-center mb-5">
-                <span class="section-kicker">NUESTRO PROCESO DE EXCELENCIA</span>
-                <h2 class="section-title">De la Vid a la Caja: Un Viaje de Calidad</h2>
+    <section id="procesos" class="process-section-v2">
+        <div class="container">
+            <!-- Título General de la Sección -->
+            <div class="row justify-content-center">
+                <div class="col-12 text-center mb-5">
+                    <span class="section-kicker">NUESTRO PROCESO DE EXCELENCIA</span>
+                    <h2 class="section-title">De la Vid a la Caja: Un Viaje de Calidad</h2>
+                </div>
             </div>
+
+            <!-- ETAPA 1: COSECHA (Imagen Izquierda, Texto Derecha) -->
+            <div class="row process-step align-items-center" data-aos="fade-right">
+                <div class="col-lg-6">
+                    <div class="process-image">
+                        <img src="./assets/images/cosechar-uvas.jpg" alt="Cosecha Manual">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="process-text">
+                        <div class="step-number">01</div>
+                        <h3>Cosecha y Selección en Finca</h3>
+                        <p>Todo comienza en nuestros viñedos, donde cada racimo es seleccionado y cosechado a mano en su
+                            punto óptimo de madurez. Este control desde el origen nos permite garantizar la trazabilidad
+                            completa y la calidad superior de la materia prima.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ETAPA 2: SECADO (Texto Izquierda, Imagen Derecha) -->
+            <div class="row process-step align-items-center" data-aos="fade-left">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="process-image">
+                        <img src="./assets/images/secadero.jpg" alt="Secado Natural al Sol">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="process-text text-lg-end">
+                        <div class="step-number">02</div>
+                        <h3>Secado Natural al Sol de San Juan</h3>
+                        <p>Aprovechamos el clima seco y la intensa exposición solar de nuestra región para un secado
+                            natural. Este método tradicional concentra los azúcares y sabores, resultando en una pasa de
+                            dulzura y textura inigualables, minimizando la intervención artificial.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ETAPA 3: SELECCIÓN Y CLASIFICACIÓN (Imagen Izquierda, Texto Derecha) -->
+            <div class="row process-step align-items-center" data-aos="fade-right">
+                <div class="col-lg-6">
+                    <div class="process-image">
+                        <img src="assets/images/seleccion.PNG" alt="Tecnología de Selección Láser">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="process-text">
+                        <div class="step-number">03</div>
+                        <h3>Tecnología de Selección Avanzada</h3>
+                        <p>Nuestra planta cuenta con la última tecnología, incluyendo máquinas de Rayos X para detectar
+                            elementos extraños y un Laser Sorter que clasifica las pasas por color, tamaño y calidad con
+                            una precisión milimétrica, asegurando la pureza del producto.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ETAPA 4: ENVASADO (Texto Izquierda, Imagen Derecha) -->
+            <div class="row process-step align-items-center" data-aos="fade-left">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="process-image">
+                        <img src="assets/images/envasado.jpg" alt="Envasado y Control Final">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="process-text text-lg-end">
+                        <div class="step-number">04</div>
+                        <h3>Envasado y Control Final</h3>
+                        <p>La etapa final es el envasado, realizado bajo estrictas normas de inocuidad como BRCGS. Cada
+                            paquete es sellado para preservar la frescura y calidad, listo para ser enviado a nuestros
+                            clientes en todo el mundo.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-        <!-- ETAPA 1: COSECHA (Imagen Izquierda, Texto Derecha) -->
-        <div class="row process-step align-items-center" data-aos="fade-right">
-            <div class="col-lg-6">
-                <div class="process-image">
-                    <img src="./assets/images/cosechar-uvas.jpg" alt="Cosecha Manual">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="process-text">
-                    <div class="step-number">01</div>
-                    <h3>Cosecha y Selección en Finca</h3>
-                    <p>Todo comienza en nuestros viñedos, donde cada racimo es seleccionado y cosechado a mano en su punto óptimo de madurez. Este control desde el origen nos permite garantizar la trazabilidad completa y la calidad superior de la materia prima.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ETAPA 2: SECADO (Texto Izquierda, Imagen Derecha) -->
-        <div class="row process-step align-items-center" data-aos="fade-left">
-            <div class="col-lg-6 order-lg-2">
-                <div class="process-image">
-                    <img src="./assets/images/secadero.jpg" alt="Secado Natural al Sol">
-                </div>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-                <div class="process-text text-lg-end">
-                    <div class="step-number">02</div>
-                    <h3>Secado Natural al Sol de San Juan</h3>
-                    <p>Aprovechamos el clima seco y la intensa exposición solar de nuestra región para un secado natural. Este método tradicional concentra los azúcares y sabores, resultando en una pasa de dulzura y textura inigualables, minimizando la intervención artificial.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ETAPA 3: SELECCIÓN Y CLASIFICACIÓN (Imagen Izquierda, Texto Derecha) -->
-        <div class="row process-step align-items-center" data-aos="fade-right">
-            <div class="col-lg-6">
-                <div class="process-image">
-                    <img src="assets/images/seleccion.PNG" alt="Tecnología de Selección Láser">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="process-text">
-                    <div class="step-number">03</div>
-                    <h3>Tecnología de Selección Avanzada</h3>
-                    <p>Nuestra planta cuenta con la última tecnología, incluyendo máquinas de Rayos X para detectar elementos extraños y un Laser Sorter que clasifica las pasas por color, tamaño y calidad con una precisión milimétrica, asegurando la pureza del producto.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ETAPA 4: ENVASADO (Texto Izquierda, Imagen Derecha) -->
-        <div class="row process-step align-items-center" data-aos="fade-left">
-            <div class="col-lg-6 order-lg-2">
-                <div class="process-image">
-                    <img src="assets/images/envasado.jpg" alt="Envasado y Control Final">
-                </div>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-                <div class="process-text text-lg-end">
-                    <div class="step-number">04</div>
-                    <h3>Envasado y Control Final</h3>
-                    <p>La etapa final es el envasado, realizado bajo estrictas normas de inocuidad como BRCGS. Cada paquete es sellado para preservar la frescura y calidad, listo para ser enviado a nuestros clientes en todo el mundo.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
+    </section>
 
 
-   <!-- <section id="certificaciones" class="certifications-section bg-light">
+    <!-- <section id="certificaciones" class="certifications-section bg-light">
         <div class="container text-center">
             <h2 class="section-title mb-5">Nuestras certificaciones de calidad</h2>
             <div class="row justify-content-center align-items-center g-4">
@@ -352,107 +363,113 @@ SECCIÓN PROCESO DE PRODUCCIÓN - VERSIÓN AMPLIADA
 
 
 
-   <!-- =================================================================
+    <!-- =================================================================
 SECCIÓN VARIEDADES DE PASAS (Efecto Cursor Interactivo)
 ================================================================== -->
-<!-- =================================================================
+    <!-- =================================================================
 SECCIÓN VARIEDADES DE PASAS (Estilo "Ficha Técnica")
 ================================================================== -->
-<section id="variedades" class="varieties-section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center mb-5">
-                <h2 class="section-title">Variedades para Paladares Exigentes</h2>
+    <section id="variedades" class="varieties-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Variedades para Paladares Exigentes</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center g-4">
+                <!-- Variedad 1: Flame -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="variety-card" style="--card-color: #982c53;">
+                        <div class="card-content">
+                            <h3 class="variety-title">Flame</h3>
+                            <div class="variety-image">
+                                <img src="./assets/images/pasa-flame.jpg" alt="Pasa Flame">
+                            </div>
+                            <p class="variety-description">
+                                Sin semilla y de color rojizo intenso. Su dulzura equilibrada y textura suave la hacen
+                                ideal para panadería fina, mezclas de snacks premium y repostería.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Variedad 2: Fiesta -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="variety-card" style="--card-color: #32694a;">
+                        <div class="card-content">
+                            <h3 class="variety-title">Fiesta</h3>
+                            <div class="variety-image">
+                                <img src="./assets/images/pasas-fiesta.webp" alt="Pasa Fiesta">
+                            </div>
+                            <p class="variety-description">
+                                Una variedad dulce y de gran tamaño. Perfecta para el consumo directo y como ingrediente
+                                principal en productos que requieren un impacto visual y de sabor.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Variedad 3: Superior -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="variety-card" style="--card-color: #982c53;">
+                        <div class="card-content">
+                            <h3 class="variety-title">Superior</h3>
+                            <div class="variety-image">
+                                <img src="./assets/images/pasa-superior.jpg" alt="Pasa Superior">
+                            </div>
+                            <p class="variety-description">
+                                Conocida por su color claro y sabor delicado. Es la elección preferida para cereales de
+                                desayuno, ensaladas gourmet y productos donde el color es un factor clave.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Variedad 4: Superior Jumbo -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="variety-card" style="--card-color: #32694a;">
+                        <div class="card-content">
+                            <h3 class="variety-title">Superior Jumbo</h3>
+                            <div class="variety-image">
+                                <img src="assets/images/pasa-jumbosuperior.webp" alt="Pasa Superior Jumbo">
+                            </div>
+                            <p class="variety-description">
+                                Calibre extra grande y textura carnosa. Un producto premium para mercados de alta gama,
+                                ideal para chocolatería y como snack de lujo por sí sola.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Variedad 5: Arizul -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="variety-card" style="--card-color: #982c53;">
+                        <div class="card-content">
+                            <h3 class="variety-title">Arizul</h3>
+                            <div class="variety-image">
+                                <img src="assets/images/pasa-arizul.png" alt="Pasa Arizul">
+                            </div>
+                            <p class="variety-description">
+                                Caracterizada por su tonalidad azul-negra y sabor complejo. Excelente para la industria
+                                vinícola, extractos y productos con perfiles de sabor intensos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Variedad 6: Moscatel -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="variety-card" style="--card-color: #32694a;">
+                        <div class="card-content">
+                            <h3 class="variety-title">Moscatel</h3>
+                            <div class="variety-image">
+                                <img src="assets/images/pasa-moscatel.jpg" alt="Pasa Moscatel">
+                            </div>
+                            <p class="variety-description">
+                                La variedad aromática por excelencia. Con un perfil floral y almizclado distintivo, es
+                                perfecta para pastelería de autor, licores y alta cocina.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row justify-content-center g-4">
-            <!-- Variedad 1: Flame -->
-            <div class="col-lg-4 col-md-6">
-                <div class="variety-card" style="--card-color: #982c53;">
-                    <div class="card-content">
-                        <h3 class="variety-title">Flame</h3>
-                        <div class="variety-image">
-                            <img src="./assets/images/pasa-flame.jpg" alt="Pasa Flame">
-                        </div>
-                        <p class="variety-description">
-                            Sin semilla y de color rojizo intenso. Su dulzura equilibrada y textura suave la hacen ideal para panadería fina, mezclas de snacks premium y repostería.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- Variedad 2: Fiesta -->
-            <div class="col-lg-4 col-md-6">
-                <div class="variety-card" style="--card-color: #32694a;">
-                    <div class="card-content">
-                        <h3 class="variety-title">Fiesta</h3>
-                        <div class="variety-image">
-                            <img src="./assets/images/pasas-fiesta.webp" alt="Pasa Fiesta">
-                        </div>
-                        <p class="variety-description">
-                            Una variedad dulce y de gran tamaño. Perfecta para el consumo directo y como ingrediente principal en productos que requieren un impacto visual y de sabor.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- Variedad 3: Superior -->
-            <div class="col-lg-4 col-md-6">
-                <div class="variety-card" style="--card-color: #982c53;">
-                    <div class="card-content">
-                        <h3 class="variety-title">Superior</h3>
-                        <div class="variety-image">
-                            <img src="./assets/images/pasa-superior.jpg" alt="Pasa Superior">
-                        </div>
-                        <p class="variety-description">
-                            Conocida por su color claro y sabor delicado. Es la elección preferida para cereales de desayuno, ensaladas gourmet y productos donde el color es un factor clave.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- Variedad 4: Superior Jumbo -->
-            <div class="col-lg-4 col-md-6">
-                <div class="variety-card" style="--card-color: #32694a;">
-                    <div class="card-content">
-                        <h3 class="variety-title">Superior Jumbo</h3>
-                        <div class="variety-image">
-                            <img src="assets/images/pasa-jumbosuperior.webp" alt="Pasa Superior Jumbo">
-                        </div>
-                        <p class="variety-description">
-                            Calibre extra grande y textura carnosa. Un producto premium para mercados de alta gama, ideal para chocolatería y como snack de lujo por sí sola.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- Variedad 5: Arizul -->
-            <div class="col-lg-4 col-md-6">
-                <div class="variety-card" style="--card-color: #982c53;">
-                    <div class="card-content">
-                        <h3 class="variety-title">Arizul</h3>
-                        <div class="variety-image">
-                            <img src="assets/images/pasa-arizul.png" alt="Pasa Arizul">
-                        </div>
-                        <p class="variety-description">
-                            Caracterizada por su tonalidad azul-negra y sabor complejo. Excelente para la industria vinícola, extractos y productos con perfiles de sabor intensos.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- Variedad 6: Moscatel -->
-            <div class="col-lg-4 col-md-6">
-                <div class="variety-card" style="--card-color: #32694a;">
-                    <div class="card-content">
-                        <h3 class="variety-title">Moscatel</h3>
-                        <div class="variety-image">
-                            <img src="assets/images/pasa-moscatel.jpg" alt="Pasa Moscatel">
-                        </div>
-                        <p class="variety-description">
-                            La variedad aromática por excelencia. Con un perfil floral y almizclado distintivo, es perfecta para pastelería de autor, licores y alta cocina.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- <section id="clientes" class="clients-section bg-light">
         <div class="container text-center">
@@ -477,38 +494,32 @@ SECCIÓN VARIEDADES DE PASAS (Estilo "Ficha Técnica")
         </div>
     </section> -->
 
-    
-<!-- =================================================================
-SECCIÓN MAPA Y UBICACIÓN - VERSIÓN MEJORADA "DE SAN JUAN AL MUNDO"
-================================================================== -->
-<section id="locaciones" class="location-section-v2">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Columna de Texto -->
-            <div class="col-lg-5 text-content" data-aos="fade-right">
-                <h2 class="section-title text-start mb-3">De San Juan al Mundo</h2>
-                <p class="lead">Nuestra raíz está en el corazón de los Andes, en la soleada provincia de San Juan, Argentina.</p>
-                <p>Desde este origen único, cultivamos y exportamos sabores que trascienden fronteras, llevando la calidad y la pasión de nuestra tierra a los mercados más exigentes del planeta.</p>
-            </div>
 
-            <!-- Columna del Mapa Interactivo -->
-            <div class="col-lg-7" data-aos="zoom-in-up">
-                <div class="interactive-map-container">
-                    <!-- Mapa 1: Mundo (visible por defecto) -->
-                    <div class="map-layer map-world">
-                        <img src="assets/images/argentina.png" alt="Argentina en el mundo">
-                        <div class="map-label">Alcance Global</div>
-                    </div>
-                    <!-- Mapa 2: Argentina (aparece al pasar el cursor) -->
-                    <div class="map-layer map-argentina">
-                        <img src="assets/images/sanjuan.png" alt="San Juan en Argentina">
-                        <div class="map-label">Nuestro Origen</div>
+    <!-- =================================================================
+SECCIÓN MAPA Y UBICACIÓN - VERSIÓN "LIENZO ANIMADO"
+================================================================== -->
+    <section id="locaciones" class="location-section-v2">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Columna de Texto -->
+                <div class="col-lg-5 text-content" data-aos="fade-right">
+                    <h2 class="section-title text-start mb-3">Nuestra Ubicación</h2>
+                    <p class="lead">Exportamos Pasas & Uvas al Mundo</p>
+                    <p>Nuestra raíz está en el corazón de los Andes, en la soleada provincia de San Juan, Argentina.
+                        Desde este origen único, llevamos la calidad y la pasión de nuestra tierra a los mercados más
+                        exigentes del planeta.</p>
+                </div>
+
+                <!-- Columna de la Imagen Animada -->
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+                    <div class="animated-map-container">
+                        <!-- Tu nueva imagen PNG transparente -->
+                        <img src="./assets/images/mapa.png" alt="Mapa de exportación desde San Juan al Mundo">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
@@ -523,182 +534,205 @@ SECCIÓN MAPA Y UBICACIÓN - VERSIÓN MEJORADA "DE SAN JUAN AL MUNDO"
             <div class="row justify-content-center mt-4">
                 <div class="col-lg-8">
                     <div class="accordion" id="faqAccordion">
-    <!-- Pregunta 1 -->
-    <div class="accordion-item glass-card">
-        <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                ¿Dónde crecen nuestras uvas?
-            </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-                Nuestras uvas prosperan bajo el glorioso sol de San Juan en Argentina, absorbiendo el clima perfecto para una dulzura y calidad inigualables.
+                        <!-- Pregunta 1 -->
+                        <div class="accordion-item glass-card">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    ¿Dónde crecen nuestras uvas?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Nuestras uvas prosperan bajo el glorioso sol de San Juan en Argentina, absorbiendo
+                                    el clima perfecto para una dulzura y calidad inigualables.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pregunta 2 -->
+                        <div class="accordion-item glass-card">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    ¿Qué hace que nuestras pasas sean especiales?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Usamos un método familiar transmitido por generaciones, combinado con las mejores
+                                    uvas de San Juan, para crear pasas que son simplemente de otro mundo.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pregunta 3 -->
+                        <div class="accordion-item glass-card">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    ¿Cómo pueden exportar nuestros productos?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Empleamos logística de última generación y un toque de magia argentina para asegurar
+                                    que sus uvas y pasas lleguen frescas y fabulosas, sin importar la distancia.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pregunta 4 -->
+                        <div class="accordion-item glass-card">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    ¿Son uvas orgánicas?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    ¡Creemos en la bondad natural! Aunque no estamos certificados como orgánicos,
+                                    tratamos nuestras vides con el máximo cuidado, dejando que la naturaleza haga la
+                                    mayor parte del trabajo pesado.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pregunta 5 -->
+                        <div class="accordion-item glass-card">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    ¿Podemos visitar sus viñedos?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Aunque amamos nuestras vides, están ocupadas produciendo delicias. Nos enfocamos en
+                                    la exportación, pero le prometemos que el sabor lo transportará directamente a
+                                    nuestro paraíso en San Juan.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Pregunta 2 -->
-    <div class="accordion-item glass-card">
-        <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                ¿Qué hace que nuestras pasas sean especiales?
-            </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-                Usamos un método familiar transmitido por generaciones, combinado con las mejores uvas de San Juan, para crear pasas que son simplemente de otro mundo.
-            </div>
         </div>
-    </div>
-    <!-- Pregunta 3 -->
-    <div class="accordion-item glass-card">
-        <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                ¿Cómo pueden exportar nuestros productos?
-            </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-                Empleamos logística de última generación y un toque de magia argentina para asegurar que sus uvas y pasas lleguen frescas y fabulosas, sin importar la distancia.
+    </section>
+
+    <!-- =================================================================
+SECCIÓN CONTACTO B2B - VERSIÓN MEJORADA
+================================================================== -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 text-center">
+                    <p class="section-kicker">Contacto Comercial</p>
+                    <h2 class="section-title">Inicie una Conversación con Nosotros</h2>
+                    <p class="section-subtitle">Complete el formulario para solicitar información detallada. Nuestro
+                        equipo de exportación se pondrá en contacto a la brevedad.</p>
+                </div>
             </div>
-        </div>
-    </div>
-    <!-- Pregunta 4 -->
-    <div class="accordion-item glass-card">
-        <h2 class="accordion-header" id="headingFour">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                ¿Son uvas orgánicas?
-            </button>
-        </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-                ¡Creemos en la bondad natural! Aunque no estamos certificados como orgánicos, tratamos nuestras vides con el máximo cuidado, dejando que la naturaleza haga la mayor parte del trabajo pesado.
-            </div>
-        </div>
-    </div>
-    <!-- Pregunta 5 -->
-    <div class="accordion-item glass-card">
-        <h2 class="accordion-header" id="headingFive">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                ¿Podemos visitar sus viñedos?
-            </button>
-        </h2>
-        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-                Aunque amamos nuestras vides, están ocupadas produciendo delicias. Nos enfocamos en la exportación, pero le prometemos que el sabor lo transportará directamente a nuestro paraíso en San Juan.
-            </div>
-        </div>
-    </div>
-</div>
+            <div class="row justify-content-center align-items-stretch mt-4">
+                <!-- Columna del Formulario -->
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <form id="contactForm" class="contact-form-card">
+                        <h4 class="mb-4">Formulario de Consulta</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Nombre Completo"
+                                        required>
+                                    <label for="name">Nombre Completo</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="company" placeholder="Empresa" required>
+                                    <label for="company">Empresa</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email"
+                                        placeholder="nombre@suempresa.com" required>
+                                    <label for="email">Email Corporativo</label>
+                                </div>
+                                <small class="form-text text-muted ms-2">No se aceptan correos de @gmail, @hotmail,
+                                    etc.</small>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <select class="form-select" id="order-volume" required>
+                                        <option value="" selected disabled>Seleccione un volumen...</option>
+                                        <option value="500kg-1ton">500 kg - 1 Tonelada</option>
+                                        <option value="1-5ton">1 - 5 Toneladas</option>
+                                        <option value="5-10ton">5 - 10 Toneladas</option>
+                                        <option value="10+ton">Más de 10 Toneladas</option>
+                                    </select>
+                                    <label for="order-volume">Volumen de Pedido Estimado</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Deje su mensaje aquí" id="message"
+                                        style="height: 150px" required></textarea>
+                                    <label for="message">Mensaje</label>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button class="btn btn-primary-custom btn-submit" type="submit">
+                                    Enviar Mensaje <i class="bi bi-arrow-right-short"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Columna de Información de Contacto -->
+                <div class="col-lg-5">
+                    <div class="contact-info-card">
+                        <h4 class="mb-4">Contacto Directo</h4>
+                        <div class="contact-info-item">
+                            <div class="icon"><i class="bi bi-envelope-at"></i></div>
+                            <div class="text">
+                                <span>Email Comercial</span>
+                                <a href="mailto:comex@latitudsrl.com">comex@latitudsrl.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="icon"><i class="bi bi-whatsapp"></i></div>
+                            <div class="text">
+                                <span>WhatsApp</span>
+                                <a href="https://wa.me/5492641234567">+54 9 264 123 4567</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="icon"><i class="bi bi-geo-alt"></i></div>
+                            <div class="text">
+                                <span>Ubicación</span>
+                                <p>San Juan, Argentina</p>
+                            </div>
+                        </div>
+                        <p class="contact-notice mt-4">
+                            <strong>Atención:</strong> Pedido mínimo 500 kg.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-   <!-- =================================================================
-SECCIÓN CONTACTO B2B - VERSIÓN MEJORADA
-================================================================== -->
-<section id="contacto" class="contact-section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10 text-center">
-                <p class="section-kicker">Contacto Comercial</p>
-                <h2 class="section-title">Inicie una Conversación con Nosotros</h2>
-                <p class="section-subtitle">Complete el formulario para solicitar información detallada. Nuestro equipo de exportación se pondrá en contacto a la brevedad.</p>
-            </div>
-        </div>
-        <div class="row justify-content-center align-items-stretch mt-4">
-            <!-- Columna del Formulario -->
-            <div class="col-lg-7 mb-4 mb-lg-0">
-                <form id="contactForm" class="contact-form-card">
-                    <h4 class="mb-4">Formulario de Consulta</h4>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Nombre Completo" required>
-                                <label for="name">Nombre Completo</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="company" placeholder="Empresa" required>
-                                <label for="company">Empresa</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="nombre@suempresa.com" required>
-                                <label for="email">Email Corporativo</label>
-                            </div>
-                            <small class="form-text text-muted ms-2">No se aceptan correos de @gmail, @hotmail, etc.</small>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <select class="form-select" id="order-volume" required>
-                                    <option value="" selected disabled>Seleccione un volumen...</option>
-                                    <option value="500kg-1ton">500 kg - 1 Tonelada</option>
-                                    <option value="1-5ton">1 - 5 Toneladas</option>
-                                    <option value="5-10ton">5 - 10 Toneladas</option>
-                                    <option value="10+ton">Más de 10 Toneladas</option>
-                                </select>
-                                <label for="order-volume">Volumen de Pedido Estimado</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Deje su mensaje aquí" id="message" style="height: 150px" required></textarea>
-                                <label for="message">Mensaje</label>
-                            </div>
-                        </div>
-                        <div class="col-12 text-center">
-                            <button class="btn btn-primary-custom btn-submit" type="submit">
-                                Enviar Mensaje <i class="bi bi-arrow-right-short"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Columna de Información de Contacto -->
-            <div class="col-lg-5">
-                <div class="contact-info-card">
-                    <h4 class="mb-4">Contacto Directo</h4>
-                    <div class="contact-info-item">
-                        <div class="icon"><i class="bi bi-envelope-at"></i></div>
-                        <div class="text">
-                            <span>Email Comercial</span>
-                            <a href="mailto:comex@latitudsrl.com">comex@latitudsrl.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="icon"><i class="bi bi-whatsapp"></i></div>
-                        <div class="text">
-                            <span>WhatsApp</span>
-                            <a href="https://wa.me/5492641234567">+54 9 264 123 4567</a>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="icon"><i class="bi bi-geo-alt"></i></div>
-                        <div class="text">
-                            <span>Ubicación</span>
-                            <p>San Juan, Argentina</p>
-                        </div>
-                    </div>
-                    <p class="contact-notice mt-4">
-                        <strong>Atención:</strong> Pedido mínimo 500 kg.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
     <footer id="footer" class="footer-section">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-4">
-                    <img src="./assets/images/logo-138x138.png" alt="Latitud S.R.L Logo" class="navbar-logo-img" style="border-radius: 20px;">
-                   
+                    <img src="./assets/images/logolatitud.png" alt="Latitud S.R.L Logo" class="logonav"
+                        style="border-radius: 20px;">
+
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <h4 class="footer-title">Nuestra Oficina</h4>
@@ -738,7 +772,7 @@ SECCIÓN CONTACTO B2B - VERSIÓN MEJORADA
         <div class="copyright-bar">
             <div class="container">
                 <div class="row">
-                  
+
                     <div class="col-12 text-center">
                         © <a href="#">Latitud S.R.L.</a>, Todos los Derechos Reservados.
                         Diseñado por <a href="https://grupoxamanen.com.ar">Grupo Xamanen</a>
@@ -758,81 +792,82 @@ SECCIÓN CONTACTO B2B - VERSIÓN MEJORADA
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // --- 1. ACTIVAR JARALLAX ---
-        jarallax(document.querySelectorAll('.jarallax'), {
-            speed: 0.5
-        });
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // --- 1. ACTIVAR JARALLAX ---
+            jarallax(document.querySelectorAll('.jarallax'), {
+                speed: 0.5
+            });
 
-        // --- 2. ACTIVAR EFECTO DE NAVBAR AL HACER SCROLL ---
-        const navbar = document.getElementById('header-nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // --- 3. ACTIVAR CONTADORES ---
-        const counters = document.querySelectorAll('.stat-number');
-        const speed = 200; // La velocidad del contador
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counter = entry.target;
-                    const target = +counter.getAttribute('data-count');
-                    
-                    const updateCount = () => {
-                        const count = +counter.innerText.replace('+', ''); // Limpia el + si existe
-                        const inc = target / speed;
-
-                        if (count < target) {
-                            counter.innerText = Math.ceil(count + inc);
-                            setTimeout(updateCount, 10); // Un timeout un poco más grande
-                        } else {
-                            counter.innerText = target + '+'; // Añade el + al final
-                        }
-                    };
-                    updateCount();
-                    observer.unobserve(counter); // Deja de observar una vez animado
+            // --- 2. ACTIVAR EFECTO DE NAVBAR AL HACER SCROLL ---
+            const navbar = document.getElementById('header-nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
                 }
             });
-        }, {
-            threshold: 0.5
-        });
 
-        counters.forEach(counter => {
-            observer.observe(counter);
-        });
+            // --- 3. ACTIVAR CONTADORES ---
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200; // La velocidad del contador
 
-        // --- 4. ACTIVAR CARRUSEL DE ESTADÍSTICAS ---
-        const statsSwiper = new Swiper('.stats-carousel-container', {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 30
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute('data-count');
+
+                        const updateCount = () => {
+                            const count = +counter.innerText.replace('+', ''); // Limpia el + si existe
+                            const inc = target / speed;
+
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count + inc);
+                                setTimeout(updateCount, 10); // Un timeout un poco más grande
+                            } else {
+                                counter.innerText = target + '+'; // Añade el + al final
+                            }
+                        };
+                        updateCount();
+                        observer.unobserve(counter); // Deja de observar una vez animado
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+
+            // --- 4. ACTIVAR CARRUSEL DE ESTADÍSTICAS ---
+            const statsSwiper = new Swiper('.stats-carousel-container', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    }
                 }
-            }
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
+
 </html>
