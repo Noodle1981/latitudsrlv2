@@ -222,7 +222,7 @@ html {
 
 @media (max-width: 991px) {
     .main-hero-parallax {
-        min-height: 80vh;
+        min-height: 100vh;
     }
 
     #main-hero-parallax .jarallax-img {
